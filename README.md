@@ -173,6 +173,10 @@ Backend endpoints:
 - The browser interface is an inspection aid; the Python CLI is the most direct reproduction path.
 - Generated benchmark outputs and local manuscript/revision files are intentionally not part of the code release.
 
+## License
+
+This repository is released under the BSD 3-Clause License. See `LICENSE`.
+
 ## Citation
 
 If you use this code, cite the associated AutoSiMP manuscript and the related LLM-controller paper:
