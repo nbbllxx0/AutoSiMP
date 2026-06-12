@@ -1,0 +1,14 @@
+name: autosimp
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.26.4
+  - scipy=1.11.4
+  - matplotlib=3.8.4
+  - pillow=10.3.0
+  - pip
+  - pip:
+      - pyamg==5.0.1
+      - Flask==2.2.5
+      - Flask-Cors==4.0.1

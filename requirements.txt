@@ -1,0 +1,7 @@
+numpy==1.26.4
+scipy==1.11.4
+pyamg==5.0.1
+matplotlib==3.8.4
+Pillow==10.3.0
+Flask==2.2.5
+Flask-Cors==4.0.1
