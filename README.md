@@ -112,6 +112,33 @@ python generate_figures.py --table convergence --output-dir paper_figures
 
 Full benchmark runs can take hours depending on mesh size, controller choice, and whether LLM calls are enabled.
 
+## Validation Scope
+
+The associated manuscript evaluates AutoSiMP as a bounded, human-verifiable
+problem-specification and solver-orchestration workflow. The code release
+supports reproduction of the solver, controller, boundary-condition generator,
+evaluator, and browser inspection workflow; manuscript-side diagnostic harnesses
+are maintained separately from this release.
+
+Current manuscript evidence includes:
+
+- 10 canonical configuration prompts and a 100-prompt held-out diagnostic suite
+  covering paraphrase, spatial language, multi-load cases, passive regions, and
+  supported ambiguous wording.
+- Rule-only parser ablation results showing 89/90 canonical fields, 67/90
+  challenge fields, and 652/900 held-out diagnostic fields.
+- A template-style configuration proxy covering 121 prompts/cases with a 4.09/9
+  mean manual-completion burden.
+- Repeated Gemini Flash-Lite-family model checks and a six-model Gemini-family
+  stress test. These runs are single-provider evidence and should not be
+  interpreted as provider-diverse robustness.
+- A normalized multi-load bracket workflow case with solver/evaluator checks.
+
+The release does not include recruited user timing, external GUI/operator
+timing, independent engineering sign-off, or provider-diverse model evidence.
+Do not use it to claim productivity gains, engineering certification, or broad
+LLM robustness beyond the reported scope.
+
 ## Browser Demo
 
 Start the backend:
@@ -176,7 +203,7 @@ Backend endpoints:
 - The configurator safety rails reject or repair many invalid specifications, but generated specs should still be reviewed before solving.
 - 3-D and large 2-D meshes benefit from `pyamg`.
 - The browser interface is an inspection aid; the Python CLI is the most direct reproduction path.
-- Generated benchmark outputs and local manuscript/revision files are intentionally not part of the code release.
+- Generated benchmark outputs and local manuscript working files are intentionally not part of the code release.
 
 ## License
 
