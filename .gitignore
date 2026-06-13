@@ -28,6 +28,7 @@ paper_figures/
 # Node/Vite
 node_modules/
 dist/
+tmp_build_verify*/
 .vite/
 
 # OS/editor noise

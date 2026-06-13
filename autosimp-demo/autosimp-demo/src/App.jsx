@@ -1058,7 +1058,7 @@ export default function AutoSiMPUI() {
   const [selectedPreset, setSelectedPreset] = useState(null);
   const [useBackend, setUseBackend] = useState(() => localStorage.getItem("use_backend") === "true");
   const [backendUrl, setBackendUrl] = useState(() => localStorage.getItem("backend_url") || "http://localhost:5555");
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem("llm_api_key") || "");
+  const [apiKey, setApiKey] = useState("");
   const [llmProvider, setLlmProvider] = useState(() => localStorage.getItem("llm_provider") || "gemini");
   const [llmModel, setLlmModel] = useState(() => localStorage.getItem("llm_model") || "gemini-2.5-flash-lite");
   const [llmEvaluation, setLlmEvaluation] = useState(null);
@@ -1577,8 +1577,11 @@ Respond with a JSON object: {"assessment": "your 3-4 sentence analysis", "sugges
                 <div>
                   <div style={{ fontSize: 9, color: COLORS.textMuted, fontFamily: "monospace", textTransform: "uppercase", marginBottom: 4 }}>API Key</div>
                   <input type="password" value={apiKey} placeholder={LLM_PROVIDERS[llmProvider]?.placeholder || "your-key"}
-                    onChange={(e) => { setApiKey(e.target.value); localStorage.setItem("llm_api_key", e.target.value); }}
+                    onChange={(e) => { setApiKey(e.target.value); }}
                     style={{ width: "100%", padding: "6px 8px", fontSize: 12, fontFamily: "monospace", background: COLORS.bg, color: COLORS.text, border: `1px solid ${COLORS.panelBorder}`, borderRadius: 4, outline: "none", boxSizing: "border-box" }} />
+                  <p style={{ fontSize: 10, color: COLORS.textMuted, marginTop: 4, marginBottom: 0, fontFamily: "monospace" }}>
+                    API keys are kept in memory only and are not saved by the demo.
+                  </p>
                   {!apiKey && LLM_PROVIDERS[llmProvider]?.helpUrl && (
                     <p style={{ fontSize: 10, color: COLORS.textMuted, marginTop: 4, marginBottom: 0, fontFamily: "monospace" }}>
                       Get a key: <a href={LLM_PROVIDERS[llmProvider].helpUrl} target="_blank" rel="noopener" style={{ color: COLORS.accent }}>{LLM_PROVIDERS[llmProvider].helpUrl.replace("https://","")}</a>

@@ -671,7 +671,7 @@ def _check_convergence(result: dict, max_iter: int) -> CheckResult:
 # ---------------------------------------------------------------------------
 
 _EVAL_SYSTEM_PROMPT = """\
-You are a topology optimization quality reviewer.  Given metrics from a solved
+You are a topology optimization quality assessor.  Given metrics from a solved
 problem, provide a brief assessment (2-3 sentences) and, if the result is poor,
 suggest ONE specific parameter change for a re-run.
 

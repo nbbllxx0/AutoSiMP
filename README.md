@@ -130,6 +130,11 @@ npm run dev
 
 Open `http://127.0.0.1:3000`.
 
+The browser demo is intended for local inspection. Prefer the Python backend
+with `GEMINI_API_KEY` set in the shell for LLM-backed parsing. If you use the
+browser-side LLM controls, the entered key is kept in memory only and is not
+persisted by the demo.
+
 Backend endpoints:
 
 - `GET /health`
@@ -181,5 +186,5 @@ This repository is released under the BSD 3-Clause License. See `LICENSE`.
 
 If you use this code, cite the associated AutoSiMP manuscript and the related LLM-controller paper:
 
-- AutoSiMP: Human-Verifiable Natural-Language Configuration for SIMP Topology Optimization.
+- AutoSiMP: Human-Verifiable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization.
 - Large Language Models as Optimization Controllers: Adaptive Continuation for SIMP Topology Optimization, arXiv:2603.25099.

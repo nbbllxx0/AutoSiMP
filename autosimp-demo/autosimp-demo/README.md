@@ -27,7 +27,9 @@ The browser-side solver is useful for instant 2-D interaction. The Python backen
 
 ## API Keys
 
-For LLM configuration, prefer setting `GEMINI_API_KEY` in the Python backend environment. Avoid committing or sharing browser-local API keys.
+For LLM configuration, prefer setting `GEMINI_API_KEY` in the Python backend
+environment. If browser-side LLM controls are used, the key is kept in memory
+only and is not persisted by the demo. Do not commit or share API keys.
 
 ## Files
 
