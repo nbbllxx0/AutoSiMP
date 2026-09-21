@@ -1,0 +1,193 @@
+{
+  "overall": {
+    "n_rows": 60,
+    "n_models": 6,
+    "n_prompts": 10,
+    "parse_success_rate": 0.55,
+    "ambiguity_flag_rate": 0.4,
+    "manual_repair_rate": 0.06060606060606061,
+    "mean_field_accuracy": 0.8840579710144927,
+    "mean_blocking_errors": 0.06060606060606061,
+    "mean_warnings": 0.30303030303030304
+  },
+  "by_model": {
+    "gemini-2.5-flash": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.9,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.9629629629629629,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.4444444444444444
+    },
+    "gemini-2.5-flash-lite": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.9,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.2222222222222222,
+      "mean_field_accuracy": 0.7777777777777777,
+      "mean_blocking_errors": 0.2222222222222222,
+      "mean_warnings": 0.4444444444444444
+    },
+    "gemini-2.5-pro": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.3,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "gemini-3-flash-preview": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.5,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.8444444444444444,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.2
+    },
+    "gemini-3.1-pro-preview": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.3,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "gemini-3.5-flash": {
+      "n_rows": 10,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 0.4,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.8333333333333333,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.25
+    }
+  },
+  "by_prompt": {
+    "M1": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M10": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.3333333333333333,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M2": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.8333333333333334,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.2,
+      "mean_field_accuracy": 0.9777777777777779,
+      "mean_blocking_errors": 0.2,
+      "mean_warnings": 0.0
+    },
+    "M3": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.5,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.8518518518518517,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M4": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.5,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.3333333333333333,
+      "mean_field_accuracy": 0.7777777777777777,
+      "mean_blocking_errors": 0.3333333333333333,
+      "mean_warnings": 1.0
+    },
+    "M5": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.16666666666666666,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.8888888888888888,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M6": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.5,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M7": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.6666666666666666,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.75,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M8": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.16666666666666666,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.6666666666666666,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M9": {
+      "n_rows": 6,
+      "n_models": 6,
+      "n_prompts": 1,
+      "parse_success_rate": 0.8333333333333334,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    }
+  }
+}

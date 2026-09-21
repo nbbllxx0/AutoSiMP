@@ -1,0 +1,9 @@
+case,dims,n_elem,ndof,n_free,n_fixed,metric,value,threshold,pass
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,matvec_rel_l2,3.051032723883303e-16,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,matvec_rel_inf,3.14653445780817e-16,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,energy_rel,2.2065406984366278e-16,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,symmetry_ref_rel,6.172567270586101e-16,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,symmetry_matfree_rel,0.0,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,diagonal_rel_l2,9.588159993507306e-17,1e-10,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,fixed_free_overlap,0,0,True
+tool_portal_bridge_vf18,8x4x4,128,675,550,125,operator_case_pass,1,1,True

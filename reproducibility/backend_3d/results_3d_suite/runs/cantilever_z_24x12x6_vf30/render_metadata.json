@@ -1,0 +1,24 @@
+{
+  "density_threshold": 0.5,
+  "scalar": "density",
+  "scalar_normalization": "per_case_0_1",
+  "dims": [
+    24,
+    12,
+    6
+  ],
+  "source": "topogpu render",
+  "outputs": {
+    "density_projection": {
+      "path": "density_projection.png",
+      "bytes": 719,
+      "sha256": "b4d51660606cc18d07ce7524c08d0cb905228d319598f83474c55cc5df35c5ad",
+      "projection_order": [
+        "xy",
+        "xz",
+        "yz"
+      ],
+      "title": "cantilever_z_24x12x6_vf30 density projection"
+    }
+  }
+}

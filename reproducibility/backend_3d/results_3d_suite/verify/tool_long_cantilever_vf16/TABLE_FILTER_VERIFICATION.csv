@@ -1,0 +1,3 @@
+case,dims,n_elem,rmin,metric,value,threshold,pass
+tool_long_cantilever_vf16,6x4x4,96,2.4,row_sum_inf_error,5.551115123125783e-16,1e-12,True
+tool_long_cantilever_vf16,6x4x4,96,2.4,uniform_density_inf_error,7.771561172376096e-16,1e-12,True

@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "wall_s": 9.824971900001401,
+  "stdout": "backend_3d/results_3d_suite/logs/verify_tool_asymmetric_bracket_vf14.stdout.txt",
+  "stderr": "backend_3d/results_3d_suite/logs/verify_tool_asymmetric_bracket_vf14.stderr.txt",
+  "cmd": [
+    "python",
+    "backend_3d/run_topogpu_with_temp_patch.py",
+    "--topogpu",
+    "verify",
+    "--case",
+    "tool_asymmetric_bracket_vf14",
+    "--dims",
+    "6x4x4",
+    "--out",
+    "backend_3d/results_3d_suite/verify/tool_asymmetric_bracket_vf14"
+  ]
+}

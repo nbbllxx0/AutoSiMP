@@ -1,0 +1,57 @@
+{
+  "problem": {
+    "Lx": 2.0,
+    "Ly": 1.0,
+    "Lz": 0.5,
+    "nelx": 120,
+    "nely": 60,
+    "nelz": 30,
+    "E": 1.0,
+    "nu": 0.3,
+    "volfrac": 0.3,
+    "max_iter": null,
+    "rmin": 2.5,
+    "supports": [
+      {
+        "type": "edge",
+        "edge": "left",
+        "constraint": "fixed"
+      }
+    ],
+    "loads": [
+      {
+        "type": "point",
+        "x": 2.0,
+        "y": 0.5,
+        "z": 0.25,
+        "fx": 0.0,
+        "fy": 0.0,
+        "fz": -1.0
+      }
+    ],
+    "passive_regions": [],
+    "name": "cantilever_3d",
+    "filter_radius": 2.5,
+    "role": "example",
+    "metadata": {
+      "support": "xmin",
+      "load": "tip_patch_z"
+    },
+    "has_force_override": false
+  },
+  "backend": "SolverV4",
+  "linear_solver": "pcg_gmg",
+  "n_iter": 6,
+  "total_wall_s": 64.58418629999505,
+  "final": {
+    "iteration": 6,
+    "compliance": 15.256819162636464,
+    "outer_iters": 175,
+    "rho_mean": 0.2999999968792865,
+    "rho_min": 0.001,
+    "rho_max": 0.8999999999999999,
+    "grayness": 0.5255974418957684,
+    "wall_s": 1.045210300013423,
+    "outer_solver": "pcg"
+  }
+}

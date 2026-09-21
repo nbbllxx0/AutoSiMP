@@ -1,0 +1,25 @@
+case,attempt,max_iter,passed,failure_injection,core_failures,rerun_hint,n_iter,final_compliance,best_compliance,final_grayness,elapsed_seconds
+cantilever_basic,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,141.13669591634033,inf,1.0,0.834
+cantilever_basic,2,80,True,,,null,120,64.46371611313114,64.46371609897201,9.442794626029428e-09,1.982
+mbb_beam,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,342.2355376304512,inf,1.0,1.337
+mbb_beam,2,80,True,,,null,120,203.1104650949642,203.11306175018728,3.292014077805266e-07,3.112
+bridge,1,10,False,uniform_gray_density,grayness;convergence,"{""max_iter"": 15, ""reason"": ""Did not converge \u2014 increase max_iter.""}",50,676.8324337988332,inf,0.84,1.989
+bridge,2,80,True,,,null,120,49.13718970193119,49.13719138934138,2.1758278056976835e-07,4.708
+cantilever_with_hole,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,125.31652408842184,inf,0.96,2.006
+cantilever_with_hole,2,80,True,,,null,120,77.34966685203612,77.3496736055685,6.840165160384831e-09,4.792
+deep_beam_shear,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,5.558637416237992,inf,1.0,0.815
+deep_beam_shear,2,80,True,,,null,120,5.506153742755253,5.506153742810725,2.2112845503981597e-09,1.861
+simply_supported_center,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,13.844295730593878,inf,1.0,1.288
+simply_supported_center,2,80,True,,,null,120,13.033364066737136,13.016798913089492,2.0984569337318344e-09,3.090
+cantilever_low_vf,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,472.7690845863023,inf,0.84,0.902
+cantilever_low_vf,2,80,True,,,null,120,112.68911054792866,112.13507281219874,0.0029752046650421853,2.027
+dual_load,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,571.6482584252117,inf,1.0,2.080
+dual_load,2,80,True,,,null,120,260.11186509142624,259.9750989789951,0.0018922466729121023,4.798
+lbracket,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,13.76771940694608,inf,0.96,2.303
+lbracket,2,80,True,,,null,120,11.423075982966367,11.423075982949316,1.2150057958559306e-09,5.441
+high_aspect,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,3597.6714045399926,inf,1.0,0.908
+high_aspect,2,80,True,,,null,120,1257.7707360788754,1257.7707781236313,1.0284340796517129e-07,2.182
+retry_rect_void_cantilever,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,108.01171195051924,inf,0.96,2.006
+retry_rect_void_cantilever,2,80,True,,,null,120,77.25221448615495,77.25221447912885,7.052145915427193e-09,4.722
+retry_void_and_pad_cantilever,1,10,False,uniform_gray_density,grayness,"{""max_iter"": 15, ""reason"": ""High grayness \u2014 increase max_iter or check beta schedule.""}",50,124.1908954122209,inf,0.96,2.015
+retry_void_and_pad_cantilever,2,80,True,,,null,120,77.53457085787619,77.53457085357552,9.977861550382002e-09,5.394

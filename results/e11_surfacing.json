@@ -1,0 +1,1920 @@
+{
+  "summary": {
+    "n_prompts": 120,
+    "counts": {
+      "detection": 32,
+      "silent_miss": 71,
+      "false_alarm": 6,
+      "correct_pass": 11
+    },
+    "n_imperfect": 103,
+    "n_flagged": 38,
+    "detection_given_imperfect": 0.3106796116504854,
+    "false_alarm_given_correct": 0.35294117647058826,
+    "mechanism": "The ambiguity gate is keyword-based (AMBIGUITY_TERMS in revision_experiments.py). It detects linguistic hedges such as near/around/roughly/mid-right, not semantic error. A confidently worded prompt that the model misreads is a silent miss.",
+    "silent_miss_names": [
+      "mbb_beam",
+      "bridge",
+      "dual_load",
+      "western_clamped_free_tip",
+      "eastern_wall_left_load",
+      "load_rightward_midspan",
+      "multi_load_mixed_direction",
+      "void_off_center",
+      "roller_language",
+      "distributed_bottom_support",
+      "p01_cantilever_wall",
+      "p02_mbb_words",
+      "p03_bridge_deck",
+      "p05_tall_short_beam",
+      "p06_two_corner_supports",
+      "p08_two_down_forces",
+      "p10_slender_beam",
+      "s01_west_clamp",
+      "s02_east_clamp",
+      "s03_south_support",
+      "s04_north_clamp",
+      "s05_upper_corner",
+      "s06_lower_corner",
+      "s07_midheight_horizontal",
+      "s08_bottom_corners_pin",
+      "s09_right_face_pull",
+      "s10_free_end_tip",
+      "m01_upper_lower_down",
+      "m02_opposed_vertical",
+      "m04_pressure_plus_tip",
+      "m05_three_point_loads",
+      "m07_mbb_extra_tip",
+      "m08_shear_pair",
+      "m09_bridge_side_load",
+      "m10_split_tip_load",
+      "v02_offcenter_void",
+      "v04_protected_pad",
+      "v07_bridge_void",
+      "v08_mbb_void",
+      "a02_under_hole",
+      "a09_pressure_deck",
+      "p11_cantilever_tip_synonym",
+      "p12_mbb_support_synonym",
+      "p13_bridge_uniform_deck",
+      "p15_deep_shear_wall",
+      "p16_two_end_supports",
+      "p20_long_narrow_free_load",
+      "s13_top_pressure_bottom_support",
+      "s15_upper_free_corner_down",
+      "s16_lower_free_corner_up",
+      "s17_mid_free_horizontal",
+      "s18_bottom_end_rollers",
+      "m11_two_right_edge_down",
+      "m12_vertical_load_pair",
+      "m13_same_point_two_components",
+      "m14_deck_pressure_midpoint",
+      "m15_three_free_edge_forces",
+      "m16_bracket_pull_and_drop",
+      "m17_mbb_two_down_loads",
+      "m18_deep_beam_two_components",
+      "m20_two_tip_loads",
+      "v15_opening_and_insert",
+      "v16_rectangular_window",
+      "v17_bridge_service_hole",
+      "v18_mbb_central_void",
+      "v19_square_bracket_pad",
+      "v20_long_bar_root_hole",
+      "a12_below_opening",
+      "a13_lower_bracket_side",
+      "a14_base_supports",
+      "a19_deck_like_load"
+    ],
+    "silent_miss_detail": [
+      {
+        "name": "mbb_beam",
+        "set": "canonical",
+        "n_match": 8,
+        "prompt": "MBB beam, 3:1 aspect ratio. Symmetry boundary condition on the left edge, roller support at the bottom right corner. Downward load at the top left corner. Half material."
+      },
+      {
+        "name": "bridge",
+        "set": "canonical",
+        "n_match": 7,
+        "prompt": "Bridge structure. 4 meters wide, 1 meter tall. Bottom edge supported vertically (pin_y). Uniform downward pressure on the top edge. Use 30% material."
+      },
+      {
+        "name": "dual_load",
+        "set": "canonical",
+        "n_match": 8,
+        "prompt": "Cantilever with two loads: one at the upper-right and one at the lower-right, both pushing down. Left edge is fixed. 50% volume fraction."
+      },
+      {
+        "name": "western_clamped_free_tip",
+        "set": "challenge",
+        "n_match": 8,
+        "prompt": "A beam is clamped along the western boundary and pulled downward at the free-end midpoint."
+      },
+      {
+        "name": "eastern_wall_left_load",
+        "set": "challenge",
+        "n_match": 8,
+        "prompt": "Use an eastern wall clamp and apply a downward force at the midpoint of the opposite free side."
+      },
+      {
+        "name": "load_rightward_midspan",
+        "set": "challenge",
+        "n_match": 8,
+        "prompt": "Clamp the left wall and push the free end horizontally to the right at mid-height."
+      },
+      {
+        "name": "multi_load_mixed_direction",
+        "set": "challenge",
+        "n_match": 8,
+        "prompt": "Left wall fixed; one downward force at the upper free corner and one upward force at the lower free corner."
+      },
+      {
+        "name": "void_off_center",
+        "set": "challenge",
+        "n_match": 6,
+        "prompt": "Cantilever with a pipe cutout one third from the clamp and centered vertically."
+      },
+      {
+        "name": "roller_language",
+        "set": "challenge",
+        "n_match": 8,
+        "prompt": "Model a three-unit beam with a vertical restraint at each bottom corner and a downward load at top center."
+      },
+      {
+        "name": "distributed_bottom_support",
+        "set": "challenge",
+        "n_match": 5,
+        "prompt": "A bridge-like span with vertical support along the underside and pressure over the deck."
+      },
+      {
+        "name": "p01_cantilever_wall",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Make a rectangular cantilever; clamp the left wall and put a downward force halfway up the free right edge."
+      },
+      {
+        "name": "p02_mbb_words",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Use the standard MBB setup with left symmetry, a vertical roller at the lower right, and a downward load at the upper left."
+      },
+      {
+        "name": "p03_bridge_deck",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Bridge-like span: support the underside vertically and apply uniform deck pressure downward; use thirty percent material."
+      },
+      {
+        "name": "p05_tall_short_beam",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "A short deep beam, taller than it is wide, clamped on the left and loaded downward at the right-side midpoint."
+      },
+      {
+        "name": "p06_two_corner_supports",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Support the two lower corners and load the top center downward in a three-to-one beam."
+      },
+      {
+        "name": "p08_two_down_forces",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Left-clamped beam with two downward forces, one high and one low on the right boundary."
+      },
+      {
+        "name": "p10_slender_beam",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Slender six-to-one cantilever, fixed on the west side, with a downward free-end load."
+      },
+      {
+        "name": "s01_west_clamp",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Clamp the west boundary and push down at the east midpoint."
+      },
+      {
+        "name": "s02_east_clamp",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Clamp the east boundary and push down at the west midpoint."
+      },
+      {
+        "name": "s03_south_support",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Use a southern vertical support and load the northern edge with downward pressure."
+      },
+      {
+        "name": "s04_north_clamp",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Attach the top edge and pull the lower-right point outward."
+      },
+      {
+        "name": "s05_upper_corner",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Left wall fixed; apply a downward point load at the upper free corner."
+      },
+      {
+        "name": "s06_lower_corner",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Left wall fixed; apply an upward point load at the lower free corner."
+      },
+      {
+        "name": "s07_midheight_horizontal",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Left edge clamped, free side pushed to the right at mid-height."
+      },
+      {
+        "name": "s08_bottom_corners_pin",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "A three-unit beam with vertical restraints at both bottom corners and a top-center downward load."
+      },
+      {
+        "name": "s09_right_face_pull",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Fix the top of a square bracket and pull the right face at one-quarter height."
+      },
+      {
+        "name": "s10_free_end_tip",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "A long six-by-one bar fixed at the western end, loaded downward at the free-end midpoint."
+      },
+      {
+        "name": "m01_upper_lower_down",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Left edge fixed; downward forces at both the upper-right and lower-right points."
+      },
+      {
+        "name": "m02_opposed_vertical",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Left wall fixed; top-right force downward and bottom-right force upward."
+      },
+      {
+        "name": "m04_pressure_plus_tip",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Bottom edge supports vertical motion; apply top pressure and an extra downward point load at midspan."
+      },
+      {
+        "name": "m05_three_point_loads",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Cantilever with three downward point loads equally spaced on the free right edge."
+      },
+      {
+        "name": "m07_mbb_extra_tip",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "MBB beam with the standard upper-left downward load and a second small downward load at midspan."
+      },
+      {
+        "name": "m08_shear_pair",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "A short deep left-clamped beam with one downward and one rightward load at the free-side midpoint."
+      },
+      {
+        "name": "m09_bridge_side_load",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "Bridge span with vertical bottom support, deck pressure, and a small horizontal side load at the right end."
+      },
+      {
+        "name": "m10_split_tip_load",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Six-to-one cantilever with two downward loads bracketing the free-end midpoint."
+      },
+      {
+        "name": "v02_offcenter_void",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Cantilever with a circular cutout one third from the clamp, centered vertically."
+      },
+      {
+        "name": "v04_protected_pad",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Keep a protected solid pad at the loaded right end of a left-clamped beam."
+      },
+      {
+        "name": "v07_bridge_void",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "Bridge span with a circular service opening at midspan and top pressure."
+      },
+      {
+        "name": "v08_mbb_void",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "MBB beam with a small circular void centered in the domain."
+      },
+      {
+        "name": "a02_under_hole",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Apply force under the pipe hole in a cantilever."
+      },
+      {
+        "name": "a09_pressure_deck",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "A bridge with pressure over the deck and supports along the underside."
+      },
+      {
+        "name": "p11_cantilever_tip_synonym",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Design a left-wall fixed rectangular beam and press downward at the free-end midpoint."
+      },
+      {
+        "name": "p12_mbb_support_synonym",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "MBB beam: symmetry along the left edge, roller at the lower-right point, load down at the top-left point."
+      },
+      {
+        "name": "p13_bridge_uniform_deck",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Make a simply supported deck with vertical underside restraint and a uniformly downward top load."
+      },
+      {
+        "name": "p15_deep_shear_wall",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Tall short cantilever, west side fixed, downward load at the midpoint of the east side."
+      },
+      {
+        "name": "p16_two_end_supports",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Beam supported vertically at both lower end points with a vertical downward load at the top center."
+      },
+      {
+        "name": "p20_long_narrow_free_load",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Long narrow cantilever fixed at the left end and loaded vertically downward at the free end."
+      },
+      {
+        "name": "s13_top_pressure_bottom_support",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Restrain the lower edge vertically and put a downward distributed load on the upper edge."
+      },
+      {
+        "name": "s15_upper_free_corner_down",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "For a left-clamped rectangle, load the upper free corner downward."
+      },
+      {
+        "name": "s16_lower_free_corner_up",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "For a left-clamped rectangle, load the lower free corner upward."
+      },
+      {
+        "name": "s17_mid_free_horizontal",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Clamp the west edge and push the east-edge midpoint horizontally outward."
+      },
+      {
+        "name": "s18_bottom_end_rollers",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Give the two bottom ends vertical roller restraints and load the upper midpoint downward."
+      },
+      {
+        "name": "m11_two_right_edge_down",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Left-clamped beam with downward point loads at the upper and lower right-edge locations."
+      },
+      {
+        "name": "m12_vertical_load_pair",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Left-fixed beam with one downward force at the upper free corner and one upward force at the lower free corner."
+      },
+      {
+        "name": "m13_same_point_two_components",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "At the right midpoint of a left-clamped beam, apply a downward load and a smaller load pointing left."
+      },
+      {
+        "name": "m14_deck_pressure_midpoint",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Use bottom vertical support, top downward pressure, and an additional downward point force at the top-center."
+      },
+      {
+        "name": "m15_three_free_edge_forces",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Cantilever with three equal downward loads at quarter, half, and three-quarter height on the free side."
+      },
+      {
+        "name": "m16_bracket_pull_and_drop",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Top-fixed bracket with a horizontal lower-right pull and a downward force at the outer corner."
+      },
+      {
+        "name": "m17_mbb_two_down_loads",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "MBB setup with the normal upper-left load plus a smaller top-midspan downward point load."
+      },
+      {
+        "name": "m18_deep_beam_two_components",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "Short deep beam fixed left, with vertical downward and horizontal rightward loads at the free-side midpoint."
+      },
+      {
+        "name": "m20_two_tip_loads",
+        "set": "heldout",
+        "n_match": 6,
+        "prompt": "Long cantilever with two downward loads placed just above and below the free-end center."
+      },
+      {
+        "name": "v15_opening_and_insert",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Cantilever with both a middle circular void and a protected solid load pad at the free end."
+      },
+      {
+        "name": "v16_rectangular_window",
+        "set": "heldout",
+        "n_match": 8,
+        "prompt": "Cantilever containing a rectangular non-design window in the center region."
+      },
+      {
+        "name": "v17_bridge_service_hole",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "Bridge span with a circular service void at midspan under a distributed top load."
+      },
+      {
+        "name": "v18_mbb_central_void",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Standard MBB beam but reserve a small circular void in the domain center."
+      },
+      {
+        "name": "v19_square_bracket_pad",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Top-fixed square bracket with a rectangular protected solid pad at the lower-right pull location."
+      },
+      {
+        "name": "v20_long_bar_root_hole",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Long left-fixed cantilever with a small circular root-side lightening hole."
+      },
+      {
+        "name": "a12_below_opening",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Put the load below the circular opening in a clamped beam."
+      },
+      {
+        "name": "a13_lower_bracket_side",
+        "set": "heldout",
+        "n_match": 7,
+        "prompt": "Pull on the lower right-side area of a top-fixed bracket."
+      },
+      {
+        "name": "a14_base_supports",
+        "set": "heldout",
+        "n_match": 4,
+        "prompt": "Support the base area and apply a force on the far side of the beam."
+      },
+      {
+        "name": "a19_deck_like_load",
+        "set": "heldout",
+        "n_match": 5,
+        "prompt": "Use deck-like loading with support along the underside."
+      }
+    ],
+    "no_significance_claim": true
+  },
+  "rows": [
+    {
+      "set": "canonical",
+      "name": "cantilever_basic",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Cantilever beam. Left edge is clamped. Downward point load at the center of the right edge. 50% volume fraction."
+    },
+    {
+      "set": "canonical",
+      "name": "mbb_beam",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "MBB beam, 3:1 aspect ratio. Symmetry boundary condition on the left edge, roller support at the bottom right corner. Downward load at the top left corner. Half material."
+    },
+    {
+      "set": "canonical",
+      "name": "bridge",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bridge structure. 4 meters wide, 1 meter tall. Bottom edge supported vertically (pin_y). Uniform downward pressure on the top edge. Use 30% material."
+    },
+    {
+      "set": "canonical",
+      "name": "cantilever_with_hole",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "mid-right",
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "Cantilever beam, left edge fixed, tip load downward at mid-right. There's a circular hole in the center of the beam for a pipe, radius 0.15. Use 40% volume fraction."
+    },
+    {
+      "set": "canonical",
+      "name": "deep_beam_shear",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Short deep cantilever: 1 unit wide, 2 units tall. Left edge clamped. Downward load at the midpoint of the right edge. 50 percent material."
+    },
+    {
+      "set": "canonical",
+      "name": "simply_supported_center",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Simply supported beam. Fixed supports at both bottom corners. Point load at the top center, going down. 50% volume fraction. 3 to 1 aspect ratio."
+    },
+    {
+      "set": "canonical",
+      "name": "cantilever_low_vf",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "Lightweight cantilever beam. Left wall fixed. Load at the tip pointing down. Only 30% material allowed."
+    },
+    {
+      "set": "canonical",
+      "name": "dual_load",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with two loads: one at the upper-right and one at the lower-right, both pushing down. Left edge is fixed. 50% volume fraction."
+    },
+    {
+      "set": "canonical",
+      "name": "lbracket",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "lower part"
+      ],
+      "cell": "detection",
+      "prompt": "L-bracket: square domain 2x2. Top edge fixed to the wall. Horizontal load pointing right at the lower part of the right edge. 40% material."
+    },
+    {
+      "set": "canonical",
+      "name": "high_aspect",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "Very long cantilever, 6 to 1 aspect ratio. Fixed on the left. Downward tip load. 50% volume fraction."
+    },
+    {
+      "set": "challenge",
+      "name": "western_clamped_free_tip",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A beam is clamped along the western boundary and pulled downward at the free-end midpoint."
+    },
+    {
+      "set": "challenge",
+      "name": "eastern_wall_left_load",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Use an eastern wall clamp and apply a downward force at the midpoint of the opposite free side."
+    },
+    {
+      "set": "challenge",
+      "name": "load_rightward_midspan",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Clamp the left wall and push the free end horizontally to the right at mid-height."
+    },
+    {
+      "set": "challenge",
+      "name": "multi_load_mixed_direction",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left wall fixed; one downward force at the upper free corner and one upward force at the lower free corner."
+    },
+    {
+      "set": "challenge",
+      "name": "void_off_center",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with a pipe cutout one third from the clamp and centered vertically."
+    },
+    {
+      "set": "challenge",
+      "name": "solid_bolt_plate",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "around"
+      ],
+      "cell": "detection",
+      "prompt": "Keep a solid bolt plate at the loaded end of a cantilever, centered around mid-height."
+    },
+    {
+      "set": "challenge",
+      "name": "top_clamped_bracket",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side"
+      ],
+      "cell": "detection",
+      "prompt": "For an L-shaped bracket, attach the upper edge to the wall and pull the lower right side horizontally outward."
+    },
+    {
+      "set": "challenge",
+      "name": "roller_language",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Model a three-unit beam with a vertical restraint at each bottom corner and a downward load at top center."
+    },
+    {
+      "set": "challenge",
+      "name": "distributed_bottom_support",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A bridge-like span with vertical support along the underside and pressure over the deck."
+    },
+    {
+      "set": "challenge",
+      "name": "fine_mesh_words",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Use a high-resolution four-to-one cantilever with forty percent material."
+    },
+    {
+      "set": "heldout",
+      "name": "p01_cantilever_wall",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Make a rectangular cantilever; clamp the left wall and put a downward force halfway up the free right edge."
+    },
+    {
+      "set": "heldout",
+      "name": "p02_mbb_words",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Use the standard MBB setup with left symmetry, a vertical roller at the lower right, and a downward load at the upper left."
+    },
+    {
+      "set": "heldout",
+      "name": "p03_bridge_deck",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bridge-like span: support the underside vertically and apply uniform deck pressure downward; use thirty percent material."
+    },
+    {
+      "set": "heldout",
+      "name": "p04_pipe_cutout",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "Cantilever with a central circular pipe cutout, fixed left side, and a downward right-midpoint tip load."
+    },
+    {
+      "set": "heldout",
+      "name": "p05_tall_short_beam",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A short deep beam, taller than it is wide, clamped on the left and loaded downward at the right-side midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "p06_two_corner_supports",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Support the two lower corners and load the top center downward in a three-to-one beam."
+    },
+    {
+      "set": "heldout",
+      "name": "p07_lightweight_tip",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "Only allow 30 percent material in a left-clamped cantilever with a downward load at the free tip."
+    },
+    {
+      "set": "heldout",
+      "name": "p08_two_down_forces",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left-clamped beam with two downward forces, one high and one low on the right boundary."
+    },
+    {
+      "set": "heldout",
+      "name": "p09_l_shape_outward",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side"
+      ],
+      "cell": "detection",
+      "prompt": "L bracket, top fixed, square domain, pull the lower-right side horizontally outward."
+    },
+    {
+      "set": "heldout",
+      "name": "p10_slender_beam",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Slender six-to-one cantilever, fixed on the west side, with a downward free-end load."
+    },
+    {
+      "set": "heldout",
+      "name": "s01_west_clamp",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Clamp the west boundary and push down at the east midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "s02_east_clamp",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Clamp the east boundary and push down at the west midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "s03_south_support",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Use a southern vertical support and load the northern edge with downward pressure."
+    },
+    {
+      "set": "heldout",
+      "name": "s04_north_clamp",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Attach the top edge and pull the lower-right point outward."
+    },
+    {
+      "set": "heldout",
+      "name": "s05_upper_corner",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left wall fixed; apply a downward point load at the upper free corner."
+    },
+    {
+      "set": "heldout",
+      "name": "s06_lower_corner",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left wall fixed; apply an upward point load at the lower free corner."
+    },
+    {
+      "set": "heldout",
+      "name": "s07_midheight_horizontal",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left edge clamped, free side pushed to the right at mid-height."
+    },
+    {
+      "set": "heldout",
+      "name": "s08_bottom_corners_pin",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A three-unit beam with vertical restraints at both bottom corners and a top-center downward load."
+    },
+    {
+      "set": "heldout",
+      "name": "s09_right_face_pull",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Fix the top of a square bracket and pull the right face at one-quarter height."
+    },
+    {
+      "set": "heldout",
+      "name": "s10_free_end_tip",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A long six-by-one bar fixed at the western end, loaded downward at the free-end midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "m01_upper_lower_down",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left edge fixed; downward forces at both the upper-right and lower-right points."
+    },
+    {
+      "set": "heldout",
+      "name": "m02_opposed_vertical",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left wall fixed; top-right force downward and bottom-right force upward."
+    },
+    {
+      "set": "heldout",
+      "name": "m03_down_and_back",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Left-clamped bracket arm with a downward tip load and a smaller backward horizontal load at the same right-midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "m04_pressure_plus_tip",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bottom edge supports vertical motion; apply top pressure and an extra downward point load at midspan."
+    },
+    {
+      "set": "heldout",
+      "name": "m05_three_point_loads",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with three downward point loads equally spaced on the free right edge."
+    },
+    {
+      "set": "heldout",
+      "name": "m06_lbracket_two_forces",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side"
+      ],
+      "cell": "detection",
+      "prompt": "Top-fixed square bracket with rightward pull low on the right side and a downward force at the outer corner."
+    },
+    {
+      "set": "heldout",
+      "name": "m07_mbb_extra_tip",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "MBB beam with the standard upper-left downward load and a second small downward load at midspan."
+    },
+    {
+      "set": "heldout",
+      "name": "m08_shear_pair",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A short deep left-clamped beam with one downward and one rightward load at the free-side midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "m09_bridge_side_load",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bridge span with vertical bottom support, deck pressure, and a small horizontal side load at the right end."
+    },
+    {
+      "set": "heldout",
+      "name": "m10_split_tip_load",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Six-to-one cantilever with two downward loads bracketing the free-end midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "v01_center_void",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Left-clamped cantilever with a circular void at the center and a downward free-end load."
+    },
+    {
+      "set": "heldout",
+      "name": "v02_offcenter_void",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with a circular cutout one third from the clamp, centered vertically."
+    },
+    {
+      "set": "heldout",
+      "name": "v03_two_bolt_holes",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Left-clamped bracket with two bolt-clearance holes near the mount and a downward right-midpoint load."
+    },
+    {
+      "set": "heldout",
+      "name": "v04_protected_pad",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Keep a protected solid pad at the loaded right end of a left-clamped beam."
+    },
+    {
+      "set": "heldout",
+      "name": "v05_void_and_pad",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Cantilever with a central pipe void and a protected solid block at the loaded tip."
+    },
+    {
+      "set": "heldout",
+      "name": "v06_rect_void",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Left-clamped beam with a rectangular window from x=0.8 to 1.1 and y=0.35 to 0.65."
+    },
+    {
+      "set": "heldout",
+      "name": "v07_bridge_void",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bridge span with a circular service opening at midspan and top pressure."
+    },
+    {
+      "set": "heldout",
+      "name": "v08_mbb_void",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "MBB beam with a small circular void centered in the domain."
+    },
+    {
+      "set": "heldout",
+      "name": "v09_lbracket_pad",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "around"
+      ],
+      "cell": "detection",
+      "prompt": "Top-fixed square bracket with a protected solid pad around the lower-right pull point."
+    },
+    {
+      "set": "heldout",
+      "name": "v10_slender_void",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Six-to-one cantilever with a small circular lightening hole near the root."
+    },
+    {
+      "set": "heldout",
+      "name": "a01_near_tip",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near",
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Place the load near the free tip of a left-clamped beam."
+    },
+    {
+      "set": "heldout",
+      "name": "a02_under_hole",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Apply force under the pipe hole in a cantilever."
+    },
+    {
+      "set": "heldout",
+      "name": "a03_bracket_arm",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side",
+        "lower part"
+      ],
+      "cell": "detection",
+      "prompt": "For the bracket, pull on the lower part of the right side."
+    },
+    {
+      "set": "heldout",
+      "name": "a04_somewhere_base",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Support the beam somewhere near the base and load the far side."
+    },
+    {
+      "set": "heldout",
+      "name": "a05_high_resolution",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "about"
+      ],
+      "cell": "detection",
+      "prompt": "Use a high-resolution long cantilever with about half material."
+    },
+    {
+      "set": "heldout",
+      "name": "a06_around_mount",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "around"
+      ],
+      "cell": "detection",
+      "prompt": "Put two bolt holes around the mount and load the motor-pad side."
+    },
+    {
+      "set": "heldout",
+      "name": "a07_centerish_load",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side",
+        "center-ish"
+      ],
+      "cell": "detection",
+      "prompt": "Cantilever with the load center-ish on the right side."
+    },
+    {
+      "set": "heldout",
+      "name": "a08_upper_region",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "left-ish"
+      ],
+      "cell": "detection",
+      "prompt": "Load the upper region of the free end and fix the left-ish side."
+    },
+    {
+      "set": "heldout",
+      "name": "a09_pressure_deck",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "A bridge with pressure over the deck and supports along the underside."
+    },
+    {
+      "set": "heldout",
+      "name": "a10_tip_horizontal",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Push the tip horizontally on a top-mounted L bracket."
+    },
+    {
+      "set": "heldout",
+      "name": "p11_cantilever_tip_synonym",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Design a left-wall fixed rectangular beam and press downward at the free-end midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "p12_mbb_support_synonym",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "MBB beam: symmetry along the left edge, roller at the lower-right point, load down at the top-left point."
+    },
+    {
+      "set": "heldout",
+      "name": "p13_bridge_uniform_deck",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Make a simply supported deck with vertical underside restraint and a uniformly downward top load."
+    },
+    {
+      "set": "heldout",
+      "name": "p14_cutout_cantilever",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "false_alarm",
+      "prompt": "A clamped beam with one round service opening in the middle and a vertical load at the right tip."
+    },
+    {
+      "set": "heldout",
+      "name": "p15_deep_shear_wall",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Tall short cantilever, west side fixed, downward load at the midpoint of the east side."
+    },
+    {
+      "set": "heldout",
+      "name": "p16_two_end_supports",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Beam supported vertically at both lower end points with a vertical downward load at the top center."
+    },
+    {
+      "set": "heldout",
+      "name": "p17_low_volume_cantilever",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Use only 30% density for a left-clamped cantilever carrying a downward load at the free end."
+    },
+    {
+      "set": "heldout",
+      "name": "p18_pair_right_loads",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Clamped-left rectangle with two downward right-edge point forces, one near the top and one near the bottom."
+    },
+    {
+      "set": "heldout",
+      "name": "p19_square_top_fixed_pull",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "lower part"
+      ],
+      "cell": "detection",
+      "prompt": "Square L-style bracket, top boundary fixed, horizontal pull at the lower part of the right boundary."
+    },
+    {
+      "set": "heldout",
+      "name": "p20_long_narrow_free_load",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Long narrow cantilever fixed at the left end and loaded vertically downward at the free end."
+    },
+    {
+      "set": "heldout",
+      "name": "s11_left_boundary_midload",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Anchor the left boundary; apply a downward force at the middle of the opposite boundary."
+    },
+    {
+      "set": "heldout",
+      "name": "s12_right_boundary_midload",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Anchor the right boundary; apply a downward force at the middle of the opposite boundary."
+    },
+    {
+      "set": "heldout",
+      "name": "s13_top_pressure_bottom_support",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Restrain the lower edge vertically and put a downward distributed load on the upper edge."
+    },
+    {
+      "set": "heldout",
+      "name": "s14_top_fixed_low_pull",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side"
+      ],
+      "cell": "detection",
+      "prompt": "Fix the upper edge of a square bracket and pull outward at the lower-right side."
+    },
+    {
+      "set": "heldout",
+      "name": "s15_upper_free_corner_down",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "For a left-clamped rectangle, load the upper free corner downward."
+    },
+    {
+      "set": "heldout",
+      "name": "s16_lower_free_corner_up",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "For a left-clamped rectangle, load the lower free corner upward."
+    },
+    {
+      "set": "heldout",
+      "name": "s17_mid_free_horizontal",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Clamp the west edge and push the east-edge midpoint horizontally outward."
+    },
+    {
+      "set": "heldout",
+      "name": "s18_bottom_end_rollers",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Give the two bottom ends vertical roller restraints and load the upper midpoint downward."
+    },
+    {
+      "set": "heldout",
+      "name": "s19_quarter_height_pull",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "about"
+      ],
+      "cell": "detection",
+      "prompt": "Top-fixed square bracket with a right-edge pull at about one quarter of the height."
+    },
+    {
+      "set": "heldout",
+      "name": "s20_west_fixed_long_bar",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "A six-unit bar fixed on the west side with a downward load at the east-side midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "m11_two_right_edge_down",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left-clamped beam with downward point loads at the upper and lower right-edge locations."
+    },
+    {
+      "set": "heldout",
+      "name": "m12_vertical_load_pair",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Left-fixed beam with one downward force at the upper free corner and one upward force at the lower free corner."
+    },
+    {
+      "set": "heldout",
+      "name": "m13_same_point_two_components",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "At the right midpoint of a left-clamped beam, apply a downward load and a smaller load pointing left."
+    },
+    {
+      "set": "heldout",
+      "name": "m14_deck_pressure_midpoint",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Use bottom vertical support, top downward pressure, and an additional downward point force at the top-center."
+    },
+    {
+      "set": "heldout",
+      "name": "m15_three_free_edge_forces",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with three equal downward loads at quarter, half, and three-quarter height on the free side."
+    },
+    {
+      "set": "heldout",
+      "name": "m16_bracket_pull_and_drop",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Top-fixed bracket with a horizontal lower-right pull and a downward force at the outer corner."
+    },
+    {
+      "set": "heldout",
+      "name": "m17_mbb_two_down_loads",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "MBB setup with the normal upper-left load plus a smaller top-midspan downward point load."
+    },
+    {
+      "set": "heldout",
+      "name": "m18_deep_beam_two_components",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Short deep beam fixed left, with vertical downward and horizontal rightward loads at the free-side midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "m19_pressure_and_side_push",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "right side"
+      ],
+      "cell": "detection",
+      "prompt": "Bridge-like span with deck pressure and a small leftward push at the right side."
+    },
+    {
+      "set": "heldout",
+      "name": "m20_two_tip_loads",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Long cantilever with two downward loads placed just above and below the free-end center."
+    },
+    {
+      "set": "heldout",
+      "name": "v11_round_mid_opening",
+      "n_match": 9,
+      "scored": true,
+      "imperfect": false,
+      "flagged": false,
+      "flags": [],
+      "cell": "correct_pass",
+      "prompt": "Left-fixed cantilever with one round opening at the domain center."
+    },
+    {
+      "set": "heldout",
+      "name": "v12_root_side_opening",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Three-by-one cantilever with a circular opening near the root and a downward right-end load."
+    },
+    {
+      "set": "heldout",
+      "name": "v13_mount_hole_pair",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Normalized bracket with two circular mounting holes near the fixed edge and a downward load at the far pad."
+    },
+    {
+      "set": "heldout",
+      "name": "v14_solid_tip_insert",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "around"
+      ],
+      "cell": "detection",
+      "prompt": "Left-clamped beam with a protected solid insert around the loaded free-end midpoint."
+    },
+    {
+      "set": "heldout",
+      "name": "v15_opening_and_insert",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever with both a middle circular void and a protected solid load pad at the free end."
+    },
+    {
+      "set": "heldout",
+      "name": "v16_rectangular_window",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Cantilever containing a rectangular non-design window in the center region."
+    },
+    {
+      "set": "heldout",
+      "name": "v17_bridge_service_hole",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Bridge span with a circular service void at midspan under a distributed top load."
+    },
+    {
+      "set": "heldout",
+      "name": "v18_mbb_central_void",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Standard MBB beam but reserve a small circular void in the domain center."
+    },
+    {
+      "set": "heldout",
+      "name": "v19_square_bracket_pad",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Top-fixed square bracket with a rectangular protected solid pad at the lower-right pull location."
+    },
+    {
+      "set": "heldout",
+      "name": "v20_long_bar_root_hole",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Long left-fixed cantilever with a small circular root-side lightening hole."
+    },
+    {
+      "set": "heldout",
+      "name": "a11_close_to_tip",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Load the part close to the free tip of a cantilever."
+    },
+    {
+      "set": "heldout",
+      "name": "a12_below_opening",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Put the load below the circular opening in a clamped beam."
+    },
+    {
+      "set": "heldout",
+      "name": "a13_lower_bracket_side",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Pull on the lower right-side area of a top-fixed bracket."
+    },
+    {
+      "set": "heldout",
+      "name": "a14_base_supports",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Support the base area and apply a force on the far side of the beam."
+    },
+    {
+      "set": "heldout",
+      "name": "a15_finer_long_beam",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "roughly"
+      ],
+      "cell": "detection",
+      "prompt": "Make the long beam fairly fine and use roughly half the material."
+    },
+    {
+      "set": "heldout",
+      "name": "a16_mount_holes_motor_side",
+      "n_match": 4,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "near"
+      ],
+      "cell": "detection",
+      "prompt": "Add bolt holes near the mount and load the far motor side."
+    },
+    {
+      "set": "heldout",
+      "name": "a17_about_mid_side",
+      "n_match": 8,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "about"
+      ],
+      "cell": "detection",
+      "prompt": "Apply the load about the middle of the free side."
+    },
+    {
+      "set": "heldout",
+      "name": "a18_upper_free_region",
+      "n_match": 7,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "left-ish"
+      ],
+      "cell": "detection",
+      "prompt": "Fix the left-ish side and load somewhere in the upper free region."
+    },
+    {
+      "set": "heldout",
+      "name": "a19_deck_like_load",
+      "n_match": 5,
+      "scored": true,
+      "imperfect": true,
+      "flagged": false,
+      "flags": [],
+      "cell": "silent_miss",
+      "prompt": "Use deck-like loading with support along the underside."
+    },
+    {
+      "set": "heldout",
+      "name": "a20_horizontal_tip_push",
+      "n_match": 6,
+      "scored": true,
+      "imperfect": true,
+      "flagged": true,
+      "flags": [
+        "tip"
+      ],
+      "cell": "detection",
+      "prompt": "Push the tip sideways on an L-shaped top-mounted bracket."
+    }
+  ]
+}

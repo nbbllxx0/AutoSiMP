@@ -1,0 +1,101 @@
+problem,category,prompt,field_matches,field_total,field_accuracy,ambiguity_flags,Lx_match,Ly_match,mesh_reasonable,volfrac_match,n_supports_match,n_loads_match,n_passive_match,support_semantics_match,load_semantics_match,passive_semantics_match
+p01_cantilever_wall,paraphrased_canonical,Make a rectangular cantilever; clamp the left wall and put a downward force halfway up the free right edge.,9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p02_mbb_words,paraphrased_canonical,"Use the standard MBB setup with left symmetry, a vertical roller at the lower right, and a downward load at the upper left.",9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p03_bridge_deck,paraphrased_canonical,Bridge-like span: support the underside vertically and apply uniform deck pressure downward; use thirty percent material.,8,9,0.8888888888888888,,True,True,True,False,True,True,True,True,True,True
+p04_pipe_cutout,paraphrased_canonical,"Cantilever with a central circular pipe cutout, fixed left side, and a downward right-midpoint tip load.",6,9,0.6666666666666666,tip,True,True,True,False,True,True,False,True,True,False
+p05_tall_short_beam,paraphrased_canonical,"A short deep beam, taller than it is wide, clamped on the left and loaded downward at the right-side midpoint.",9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p06_two_corner_supports,paraphrased_canonical,Support the two lower corners and load the top center downward in a three-to-one beam.,5,9,0.5555555555555556,,False,True,True,True,False,True,True,False,False,True
+p07_lightweight_tip,paraphrased_canonical,Only allow 30 percent material in a left-clamped cantilever with a downward load at the free tip.,9,9,1.0,tip,True,True,True,True,True,True,True,True,True,True
+p08_two_down_forces,paraphrased_canonical,"Left-clamped beam with two downward forces, one high and one low on the right boundary.",7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+p09_l_shape_outward,paraphrased_canonical,"L bracket, top fixed, square domain, pull the lower-right side horizontally outward.",6,9,0.6666666666666666,right side,True,True,True,False,True,True,True,False,False,True
+p10_slender_beam,paraphrased_canonical,"Slender six-to-one cantilever, fixed on the west side, with a downward free-end load.",7,9,0.7777777777777778,,False,True,True,True,True,True,True,True,False,True
+s01_west_clamp,spatial_language,Clamp the west boundary and push down at the east midpoint.,9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+s02_east_clamp,spatial_language,Clamp the east boundary and push down at the west midpoint.,7,9,0.7777777777777778,,True,True,True,True,True,True,True,False,False,True
+s03_south_support,spatial_language,Use a southern vertical support and load the northern edge with downward pressure.,5,9,0.5555555555555556,,False,True,True,False,True,True,True,False,False,True
+s04_north_clamp,spatial_language,Attach the top edge and pull the lower-right point outward.,5,9,0.5555555555555556,,True,False,True,False,True,True,True,False,False,True
+s05_upper_corner,spatial_language,Left wall fixed; apply a downward point load at the upper free corner.,8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s06_lower_corner,spatial_language,Left wall fixed; apply an upward point load at the lower free corner.,8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s07_midheight_horizontal,spatial_language,"Left edge clamped, free side pushed to the right at mid-height.",8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s08_bottom_corners_pin,spatial_language,A three-unit beam with vertical restraints at both bottom corners and a top-center downward load.,5,9,0.5555555555555556,,False,True,True,True,False,True,True,False,False,True
+s09_right_face_pull,spatial_language,Fix the top of a square bracket and pull the right face at one-quarter height.,6,9,0.6666666666666666,,True,True,True,False,True,True,True,False,False,True
+s10_free_end_tip,spatial_language,"A long six-by-one bar fixed at the western end, loaded downward at the free-end midpoint.",7,9,0.7777777777777778,,False,True,True,True,True,True,True,True,False,True
+m01_upper_lower_down,multi_load,Left edge fixed; downward forces at both the upper-right and lower-right points.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m02_opposed_vertical,multi_load,Left wall fixed; top-right force downward and bottom-right force upward.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m03_down_and_back,multi_load,Left-clamped bracket arm with a downward tip load and a smaller backward horizontal load at the same right-midpoint.,7,9,0.7777777777777778,tip,True,True,True,True,True,False,True,True,False,True
+m04_pressure_plus_tip,multi_load,Bottom edge supports vertical motion; apply top pressure and an extra downward point load at midspan.,4,9,0.4444444444444444,,False,True,True,False,True,False,True,False,False,True
+m05_three_point_loads,multi_load,Cantilever with three downward point loads equally spaced on the free right edge.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m06_lbracket_two_forces,multi_load,Top-fixed square bracket with rightward pull low on the right side and a downward force at the outer corner.,5,9,0.5555555555555556,right side,True,True,True,False,True,False,True,False,False,True
+m07_mbb_extra_tip,multi_load,MBB beam with the standard upper-left downward load and a second small downward load at midspan.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m08_shear_pair,multi_load,A short deep left-clamped beam with one downward and one rightward load at the free-side midpoint.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m09_bridge_side_load,multi_load,"Bridge span with vertical bottom support, deck pressure, and a small horizontal side load at the right end.",6,9,0.6666666666666666,,True,True,True,False,True,False,True,True,False,True
+m10_split_tip_load,multi_load,Six-to-one cantilever with two downward loads bracketing the free-end midpoint.,6,9,0.6666666666666666,,False,True,True,True,True,False,True,True,False,True
+v01_center_void,passive_region,Left-clamped cantilever with a circular void at the center and a downward free-end load.,8,9,0.8888888888888888,,True,True,True,False,True,True,True,True,True,True
+v02_offcenter_void,passive_region,"Cantilever with a circular cutout one third from the clamp, centered vertically.",4,9,0.4444444444444444,,False,True,True,False,True,True,False,True,False,False
+v03_two_bolt_holes,passive_region,Left-clamped bracket with two bolt-clearance holes near the mount and a downward right-midpoint load.,3,9,0.3333333333333333,near,False,False,True,False,True,True,False,True,False,False
+v04_protected_pad,passive_region,Keep a protected solid pad at the loaded right end of a left-clamped beam.,7,9,0.7777777777777778,,True,True,True,True,True,True,False,True,True,False
+v05_void_and_pad,passive_region,Cantilever with a central pipe void and a protected solid block at the loaded tip.,6,9,0.6666666666666666,tip,True,True,True,False,True,True,False,True,True,False
+v06_rect_void,passive_region,Left-clamped beam with a rectangular window from x=0.8 to 1.1 and y=0.35 to 0.65.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+v07_bridge_void,passive_region,Bridge span with a circular service opening at midspan and top pressure.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+v08_mbb_void,passive_region,MBB beam with a small circular void centered in the domain.,8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,True,False
+v09_lbracket_pad,passive_region,Top-fixed square bracket with a protected solid pad around the lower-right pull point.,4,9,0.4444444444444444,around,True,True,True,False,True,True,False,False,False,False
+v10_slender_void,passive_region,Six-to-one cantilever with a small circular lightening hole near the root.,6,9,0.6666666666666666,near,False,True,True,True,True,True,True,True,False,False
+a01_near_tip,ambiguous_supported,Place the load near the free tip of a left-clamped beam.,9,9,1.0,near;tip,True,True,True,True,True,True,True,True,True,True
+a02_under_hole,ambiguous_supported,Apply force under the pipe hole in a cantilever.,8,9,0.8888888888888888,,True,True,True,False,True,True,True,True,True,True
+a03_bracket_arm,ambiguous_supported,"For the bracket, pull on the lower part of the right side.",6,9,0.6666666666666666,right side;lower part,True,False,True,False,True,True,True,False,True,True
+a04_somewhere_base,ambiguous_supported,Support the beam somewhere near the base and load the far side.,5,9,0.5555555555555556,near,False,True,True,True,False,True,True,False,False,True
+a05_high_resolution,ambiguous_supported,Use a high-resolution long cantilever with about half material.,7,9,0.7777777777777778,about,False,True,True,True,True,True,True,True,False,True
+a06_around_mount,ambiguous_supported,Put two bolt holes around the mount and load the motor-pad side.,3,9,0.3333333333333333,around,False,False,True,False,True,True,False,True,False,False
+a07_centerish_load,ambiguous_supported,Cantilever with the load center-ish on the right side.,9,9,1.0,right side;center-ish,True,True,True,True,True,True,True,True,True,True
+a08_upper_region,ambiguous_supported,Load the upper region of the free end and fix the left-ish side.,8,9,0.8888888888888888,left-ish,True,True,True,True,True,True,True,True,False,True
+a09_pressure_deck,ambiguous_supported,A bridge with pressure over the deck and supports along the underside.,8,9,0.8888888888888888,,True,True,True,False,True,True,True,True,True,True
+a10_tip_horizontal,ambiguous_supported,Push the tip horizontally on a top-mounted L bracket.,5,9,0.5555555555555556,tip,True,False,True,False,True,True,True,False,False,True
+p11_cantilever_tip_synonym,paraphrased_canonical,Design a left-wall fixed rectangular beam and press downward at the free-end midpoint.,9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p12_mbb_support_synonym,paraphrased_canonical,"MBB beam: symmetry along the left edge, roller at the lower-right point, load down at the top-left point.",9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p13_bridge_uniform_deck,paraphrased_canonical,Make a simply supported deck with vertical underside restraint and a uniformly downward top load.,4,9,0.4444444444444444,,False,True,True,False,False,True,True,False,False,True
+p14_cutout_cantilever,paraphrased_canonical,A clamped beam with one round service opening in the middle and a vertical load at the right tip.,6,9,0.6666666666666666,tip,True,True,True,False,True,True,False,True,True,False
+p15_deep_shear_wall,paraphrased_canonical,"Tall short cantilever, west side fixed, downward load at the midpoint of the east side.",6,9,0.6666666666666666,,False,False,True,True,True,True,True,True,False,True
+p16_two_end_supports,paraphrased_canonical,Beam supported vertically at both lower end points with a vertical downward load at the top center.,5,9,0.5555555555555556,,False,True,True,True,False,True,True,False,False,True
+p17_low_volume_cantilever,paraphrased_canonical,Use only 30% density for a left-clamped cantilever carrying a downward load at the free end.,9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+p18_pair_right_loads,paraphrased_canonical,"Clamped-left rectangle with two downward right-edge point forces, one near the top and one near the bottom.",7,9,0.7777777777777778,near,True,True,True,True,True,False,True,True,False,True
+p19_square_top_fixed_pull,paraphrased_canonical,"Square L-style bracket, top boundary fixed, horizontal pull at the lower part of the right boundary.",6,9,0.6666666666666666,lower part,True,True,True,False,True,True,True,False,False,True
+p20_long_narrow_free_load,paraphrased_canonical,Long narrow cantilever fixed at the left end and loaded vertically downward at the free end.,7,9,0.7777777777777778,,False,True,True,True,True,True,True,True,False,True
+s11_left_boundary_midload,spatial_language,Anchor the left boundary; apply a downward force at the middle of the opposite boundary.,9,9,1.0,,True,True,True,True,True,True,True,True,True,True
+s12_right_boundary_midload,spatial_language,Anchor the right boundary; apply a downward force at the middle of the opposite boundary.,7,9,0.7777777777777778,,True,True,True,True,True,True,True,False,False,True
+s13_top_pressure_bottom_support,spatial_language,Restrain the lower edge vertically and put a downward distributed load on the upper edge.,5,9,0.5555555555555556,,False,True,True,False,True,True,True,False,False,True
+s14_top_fixed_low_pull,spatial_language,Fix the upper edge of a square bracket and pull outward at the lower-right side.,6,9,0.6666666666666666,right side,True,True,True,False,True,True,True,False,False,True
+s15_upper_free_corner_down,spatial_language,"For a left-clamped rectangle, load the upper free corner downward.",8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s16_lower_free_corner_up,spatial_language,"For a left-clamped rectangle, load the lower free corner upward.",8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s17_mid_free_horizontal,spatial_language,Clamp the west edge and push the east-edge midpoint horizontally outward.,8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,False,True
+s18_bottom_end_rollers,spatial_language,Give the two bottom ends vertical roller restraints and load the upper midpoint downward.,5,9,0.5555555555555556,,False,True,True,True,False,True,True,False,False,True
+s19_quarter_height_pull,spatial_language,Top-fixed square bracket with a right-edge pull at about one quarter of the height.,6,9,0.6666666666666666,about,True,True,True,False,True,True,True,False,False,True
+s20_west_fixed_long_bar,spatial_language,A six-unit bar fixed on the west side with a downward load at the east-side midpoint.,7,9,0.7777777777777778,,False,True,True,True,True,True,True,True,False,True
+m11_two_right_edge_down,multi_load,Left-clamped beam with downward point loads at the upper and lower right-edge locations.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m12_vertical_load_pair,multi_load,Left-fixed beam with one downward force at the upper free corner and one upward force at the lower free corner.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m13_same_point_two_components,multi_load,"At the right midpoint of a left-clamped beam, apply a downward load and a smaller load pointing left.",7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m14_deck_pressure_midpoint,multi_load,"Use bottom vertical support, top downward pressure, and an additional downward point force at the top-center.",4,9,0.4444444444444444,,False,True,True,False,True,False,True,False,False,True
+m15_three_free_edge_forces,multi_load,"Cantilever with three equal downward loads at quarter, half, and three-quarter height on the free side.",7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m16_bracket_pull_and_drop,multi_load,Top-fixed bracket with a horizontal lower-right pull and a downward force at the outer corner.,4,9,0.4444444444444444,,True,False,True,False,True,False,True,False,False,True
+m17_mbb_two_down_loads,multi_load,MBB setup with the normal upper-left load plus a smaller top-midspan downward point load.,7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m18_deep_beam_two_components,multi_load,"Short deep beam fixed left, with vertical downward and horizontal rightward loads at the free-side midpoint.",7,9,0.7777777777777778,,True,True,True,True,True,False,True,True,False,True
+m19_pressure_and_side_push,multi_load,Bridge-like span with deck pressure and a small leftward push at the right side.,6,9,0.6666666666666666,right side,True,True,True,False,True,False,True,True,False,True
+m20_two_tip_loads,multi_load,Long cantilever with two downward loads placed just above and below the free-end center.,6,9,0.6666666666666666,,False,True,True,True,True,False,True,True,False,True
+v11_round_mid_opening,passive_region,Left-fixed cantilever with one round opening at the domain center.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+v12_root_side_opening,passive_region,Three-by-one cantilever with a circular opening near the root and a downward right-end load.,4,9,0.4444444444444444,near,False,True,True,False,True,True,False,True,False,False
+v13_mount_hole_pair,passive_region,Normalized bracket with two circular mounting holes near the fixed edge and a downward load at the far pad.,3,9,0.3333333333333333,near,False,False,True,False,True,True,False,True,False,False
+v14_solid_tip_insert,passive_region,Left-clamped beam with a protected solid insert around the loaded free-end midpoint.,7,9,0.7777777777777778,around,True,True,True,True,True,True,False,True,True,False
+v15_opening_and_insert,passive_region,Cantilever with both a middle circular void and a protected solid load pad at the free end.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+v16_rectangular_window,passive_region,Cantilever containing a rectangular non-design window in the center region.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+v17_bridge_service_hole,passive_region,Bridge span with a circular service void at midspan under a distributed top load.,8,9,0.8888888888888888,,True,True,True,False,True,True,True,True,True,True
+v18_mbb_central_void,passive_region,Standard MBB beam but reserve a small circular void in the domain center.,8,9,0.8888888888888888,,True,True,True,True,True,True,True,True,True,False
+v19_square_bracket_pad,passive_region,Top-fixed square bracket with a rectangular protected solid pad at the lower-right pull location.,4,9,0.4444444444444444,,True,True,True,False,True,True,False,False,False,False
+v20_long_bar_root_hole,passive_region,Long left-fixed cantilever with a small circular root-side lightening hole.,6,9,0.6666666666666666,,False,True,True,True,True,True,True,True,False,False
+a11_close_to_tip,ambiguous_supported,Load the part close to the free tip of a cantilever.,9,9,1.0,tip,True,True,True,True,True,True,True,True,True,True
+a12_below_opening,ambiguous_supported,Put the load below the circular opening in a clamped beam.,6,9,0.6666666666666666,,True,True,True,False,True,True,False,True,True,False
+a13_lower_bracket_side,ambiguous_supported,Pull on the lower right-side area of a top-fixed bracket.,6,9,0.6666666666666666,,True,False,True,False,True,True,True,False,True,True
+a14_base_supports,ambiguous_supported,Support the base area and apply a force on the far side of the beam.,5,9,0.5555555555555556,,False,True,True,True,False,True,True,False,False,True
+a15_finer_long_beam,ambiguous_supported,Make the long beam fairly fine and use roughly half the material.,7,9,0.7777777777777778,roughly,False,True,True,True,True,True,True,True,False,True
+a16_mount_holes_motor_side,ambiguous_supported,Add bolt holes near the mount and load the far motor side.,3,9,0.3333333333333333,near,False,False,True,False,True,True,False,True,False,False
+a17_about_mid_side,ambiguous_supported,Apply the load about the middle of the free side.,9,9,1.0,about,True,True,True,True,True,True,True,True,True,True
+a18_upper_free_region,ambiguous_supported,Fix the left-ish side and load somewhere in the upper free region.,8,9,0.8888888888888888,left-ish,True,True,True,True,True,True,True,True,False,True
+a19_deck_like_load,ambiguous_supported,Use deck-like loading with support along the underside.,5,9,0.5555555555555556,,False,True,True,False,True,True,True,False,False,True
+a20_horizontal_tip_push,ambiguous_supported,Push the tip sideways on an L-shaped top-mounted bracket.,5,9,0.5555555555555556,tip,True,False,True,False,True,True,True,False,False,True

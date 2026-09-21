@@ -1,0 +1,41 @@
+{
+  "Lx": 6.0,
+  "Ly": 1.0,
+  "Lz": 0.0,
+  "nelx": 120,
+  "nely": 20,
+  "nelz": 0,
+  "E": 1.0,
+  "nu": 0.3,
+  "volfrac": 0.5,
+  "supports": [
+    {
+      "type": "edge",
+      "edge": "bottom",
+      "constraint": "pin_y",
+      "x_range": [
+        0.0,
+        0.1
+      ]
+    },
+    {
+      "type": "edge",
+      "edge": "bottom",
+      "constraint": "pin_y",
+      "x_range": [
+        0.9,
+        1.0
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "type": "distributed",
+      "edge": "top",
+      "magnitude": -1.0
+    }
+  ],
+  "passive_regions": [],
+  "max_iter": null,
+  "rmin": null
+}

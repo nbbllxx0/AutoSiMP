@@ -1,0 +1,9 @@
+name,repair,before_issue_count,before_error_count,after_issue_count,after_error_count,blocking_recovered,all_expected_cleared,after_checks
+missing_support,added fixed left-edge support,2,2,0,0,True,True,[]
+missing_load,added downward right-edge load,1,1,0,0,True,True,[]
+load_on_fixed_edge,moved load from fixed edge to free edge,1,1,0,0,True,True,[]
+rigid_y_unconstrained,upgraded support from pin_x to fixed,1,1,0,0,True,True,[]
+load_inside_void,moved passive void away from load point,1,1,0,0,True,True,[]
+support_inside_void,moved passive void away from support,1,1,0,0,True,True,[]
+ambiguous_load_phrase,replaced ambiguous spatial phrase with coordinates,1,0,0,0,True,True,[]
+real_units_warning,changed real-units prompt to normalized comparative benchmark,1,0,0,0,True,True,[]

@@ -1,0 +1,33 @@
+{
+  "Lx": 6.0,
+  "Ly": 1.0,
+  "Lz": 0.0,
+  "nelx": 120,
+  "nely": 20,
+  "nelz": 0,
+  "E": 1.0,
+  "nu": 0.3,
+  "volfrac": 0.5,
+  "max_iter": null,
+  "rmin": null,
+  "supports": [
+    {
+      "type": "edge",
+      "edge": "bottom",
+      "constraint": "pin_y"
+    },
+    {
+      "type": "edge",
+      "edge": "bottom",
+      "constraint": "pin_y"
+    }
+  ],
+  "loads": [
+    {
+      "type": "distributed",
+      "edge": "top",
+      "magnitude": -1.0
+    }
+  ],
+  "passive_regions": []
+}

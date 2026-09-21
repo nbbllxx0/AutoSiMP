@@ -1,0 +1,1935 @@
+{
+  "summary": {
+    "cases": 12,
+    "initial_failures": 12,
+    "recovered": 12,
+    "final_passed": 12,
+    "mean_attempts": 2.0,
+    "initial_iter": 10,
+    "retry_iter_floor": 80,
+    "failure_injection": "uniform_gray_density"
+  },
+  "cases": [
+    {
+      "case": "cantilever_basic",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 0.8339998722076416,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 141.13669591634033,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 141.13669591634033,
+              "threshold": Infinity,
+              "message": "Final compliance = 141.1367 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1800 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 1.981999397277832,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 64.46371611313114,
+          "best_compliance": 64.46371609897201,
+          "final_grayness": 9.442794626029428e-09,
+          "best_grayness": 1.2629982452180463e-08,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.000000000219645,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 9.442794626029428e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.49999999999999956,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/900 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0748,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0748 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.8824,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.882 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "mbb_beam",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 1.3370003700256348,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 342.2355376304512,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 342.2355376304512,
+              "threshold": Infinity,
+              "message": "Final compliance = 342.2355 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/2700 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "No measurable load paths."
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 3.1120128631591797,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 203.1104650949642,
+          "best_compliance": 203.11306175018728,
+          "final_grayness": 3.292014077805266e-07,
+          "best_grayness": 7.499484836089371e-05,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 0.9999872157152243,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 3.292014077805266e-07,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5000000000000009,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0096,
+              "threshold": 0.1,
+              "message": "13/1350 solid elements are thin-members (1.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0459,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0459 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "No measurable load paths."
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "bridge",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 1.988999605178833,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness",
+            "convergence"
+          ],
+          "rerun_hint": {
+            "reason": "Did not converge \u2014 increase max_iter.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 676.8324337988332,
+          "best_compliance": Infinity,
+          "final_grayness": 0.84,
+          "best_grayness": 0.84,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "120/120 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 676.8324337988332,
+              "threshold": Infinity,
+              "message": "Final compliance = 676.8324 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.84,
+              "threshold": 0.15,
+              "message": "Grayness = 0.8400 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.29999999999999993,
+              "threshold": 0.3,
+              "message": "Actual vf=0.3000 vs target=0.3000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": false,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Solver ran 50 iters (hit limit 50)"
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3600 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Skipped (no point loads or supports to measure)."
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 4.708012819290161,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 49.13718970193119,
+          "best_compliance": 49.13719138934138,
+          "final_grayness": 2.1758278056976835e-07,
+          "best_grayness": 1.0828431270341404e-06,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "120/120 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 0.9999999656592056,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 2.1758278056976835e-07,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.30000000000090765,
+              "threshold": 0.3,
+              "message": "Actual vf=0.3000 vs target=0.3000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.062,
+              "threshold": 0.1,
+              "message": "67/1080 solid elements are thin-members (6.2%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0524,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0524 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Skipped (no point loads or supports to measure)."
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "cantilever_with_hole",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 2.006014347076416,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 125.31652408842184,
+          "best_compliance": Infinity,
+          "final_grayness": 0.96,
+          "best_grayness": 0.96,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 125.31652408842184,
+              "threshold": Infinity,
+              "message": "Final compliance = 125.3165 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.9600000000000003,
+              "threshold": 0.15,
+              "message": "Grayness = 0.9600 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3200 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 4.792001724243164,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 77.34966685203612,
+          "best_compliance": 77.3496736055685,
+          "final_grayness": 6.840165160384831e-09,
+          "best_grayness": 8.182799243178542e-07,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 0.9999999126882887,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 6.840165160384831e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.3999999999922275,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1280 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0708,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0708 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.8602,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.860 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "deep_beam_shear",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 0.8150005340576172,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 5.558637416237992,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 5.558637416237992,
+              "threshold": Infinity,
+              "message": "Final compliance = 5.5586 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1800 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 1.8610012531280518,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 5.506153742755253,
+          "best_compliance": 5.506153742810725,
+          "final_grayness": 2.2112845503981597e-09,
+          "best_grayness": 2.243607917821018e-09,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 0.9999999999899254,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 2.2112845503981597e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4999999999999996,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/900 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0421,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0421 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.7143,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.714 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "simply_supported_center",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 1.2879996299743652,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 13.844295730593878,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 13.844295730593878,
+              "threshold": Infinity,
+              "message": "Final compliance = 13.8443 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/2700 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.7617,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.762 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 3.090014696121216,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 13.033364066737136,
+          "best_compliance": 13.016798913089492,
+          "final_grayness": 2.0984569337318344e-09,
+          "best_grayness": 0.002979562265573975,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0012725981063582,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.001 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 2.0984569337318344e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5000000000000002,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0222,
+              "threshold": 0.1,
+              "message": "30/1350 solid elements are thin-members (2.2%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0469,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0469 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.7617,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.762 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "cantilever_low_vf",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 0.9019994735717773,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 472.7690845863023,
+          "best_compliance": Infinity,
+          "final_grayness": 0.84,
+          "best_grayness": 0.84,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 472.7690845863023,
+              "threshold": Infinity,
+              "message": "Final compliance = 472.7691 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.84,
+              "threshold": 0.15,
+              "message": "Grayness = 0.8400 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.29999999999999993,
+              "threshold": 0.3,
+              "message": "Actual vf=0.3000 vs target=0.3000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1800 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 2.0270001888275146,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 112.68911054792866,
+          "best_compliance": 112.13507281219874,
+          "final_grayness": 0.0029752046650421853,
+          "best_grayness": 0.007572295834046585,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0049408068486994,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.005 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 0.0029752046650421853,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0030 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.29999999999993704,
+              "threshold": 0.3,
+              "message": "Actual vf=0.3000 vs target=0.3000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00050) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0443,
+              "threshold": 0.1,
+              "message": "24/542 solid elements are thin-members (4.4%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.097,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0970 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.8571,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.857 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "dual_load",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 2.0795204639434814,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 571.6482584252117,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "2/2 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 571.6482584252117,
+              "threshold": Infinity,
+              "message": "Final compliance = 571.6483 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3200 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 4.797523736953735,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 260.11186509142624,
+          "best_compliance": 259.9750989789951,
+          "final_grayness": 0.0018922466729121023,
+          "best_grayness": 0.0005035532871250438,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "2/2 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0005260738931085,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.001 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 0.0018922466729121023,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0019 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5000000000093927,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00006) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0112,
+              "threshold": 0.1,
+              "message": "18/1602 solid elements are thin-members (1.1%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0691,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0691 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.9249,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.925 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "lbracket",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 2.3030025959014893,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 13.76771940694608,
+          "best_compliance": Infinity,
+          "final_grayness": 0.96,
+          "best_grayness": 0.96,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 13.76771940694608,
+              "threshold": Infinity,
+              "message": "Final compliance = 13.7677 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.9600000000000004,
+              "threshold": 0.15,
+              "message": "Grayness = 0.9600 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3600 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 5.440997362136841,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 11.423075982966367,
+          "best_compliance": 11.423075982949316,
+          "final_grayness": 1.2150057958559306e-09,
+          "best_grayness": 1.1980271032399152e-09,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0000000000014928,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 1.2150057958559306e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1440 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0253,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0253 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "high_aspect",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 0.9080109596252441,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 3597.6714045399926,
+          "best_compliance": Infinity,
+          "final_grayness": 1.0,
+          "best_grayness": 1.0,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 3597.6714045399926,
+              "threshold": Infinity,
+              "message": "Final compliance = 3597.6714 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Grayness = 1.0000 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.5,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/2400 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 2.182002067565918,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 1257.7707360788754,
+          "best_compliance": 1257.7707781236313,
+          "final_grayness": 1.0284340796517129e-07,
+          "best_grayness": 1.444750214920353e-06,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 0.9999999665720045,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 1.0284340796517129e-07,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.49999999999999467,
+              "threshold": 0.5,
+              "message": "Actual vf=0.5000 vs target=0.5000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0117,
+              "threshold": 0.1,
+              "message": "14/1200 solid elements are thin-members (1.2%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0858,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0858 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.9524,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.952 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "retry_rect_void_cantilever",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 2.0060019493103027,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 108.01171195051924,
+          "best_compliance": Infinity,
+          "final_grayness": 0.96,
+          "best_grayness": 0.96,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 108.01171195051924,
+              "threshold": Infinity,
+              "message": "Final compliance = 108.0117 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.9600000000000003,
+              "threshold": 0.15,
+              "message": "Grayness = 0.9600 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3200 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 4.721999883651733,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 77.25221448615495,
+          "best_compliance": 77.25221447912885,
+          "final_grayness": 7.052145915427193e-09,
+          "best_grayness": 8.765113692957936e-09,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0000000000909501,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 7.052145915427193e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.3999999999968925,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1280 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0708,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0708 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.8602,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.860 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    },
+    {
+      "case": "retry_void_and_pad_cantilever",
+      "initial_iter": 10,
+      "retry_iter_floor": 80,
+      "attempts": [
+        {
+          "attempt": 1,
+          "max_iter": 10,
+          "elapsed_seconds": 2.0150210857391357,
+          "failure_injection": "uniform_gray_density",
+          "passed": false,
+          "core_failures": [
+            "grayness"
+          ],
+          "rerun_hint": {
+            "reason": "High grayness \u2014 increase max_iter or check beta schedule.",
+            "max_iter": 15
+          },
+          "n_iter": 50,
+          "final_compliance": 124.1908954122209,
+          "best_compliance": Infinity,
+          "final_grayness": 0.96,
+          "best_grayness": 0.96,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 124.1908954122209,
+              "threshold": Infinity,
+              "message": "Final compliance = 124.1909 (no valid best to compare)."
+            },
+            {
+              "name": "grayness",
+              "passed": false,
+              "value": 0.9600000000000003,
+              "threshold": 0.15,
+              "message": "Grayness = 0.9600 (too gray \u2014 needs more sharpening)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.4,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 50.0,
+              "threshold": 50.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 10 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/3200 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0000 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 1.000 (direct)"
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "max_iter": 80,
+          "elapsed_seconds": 5.393996953964233,
+          "failure_injection": "",
+          "passed": true,
+          "core_failures": [],
+          "rerun_hint": null,
+          "n_iter": 120,
+          "final_compliance": 77.53457085787619,
+          "best_compliance": 77.53457085357552,
+          "final_grayness": 9.977861550382002e-09,
+          "best_grayness": 1.0097289358489454e-08,
+          "checks": [
+            {
+              "name": "connectivity",
+              "passed": true,
+              "value": 1.0,
+              "threshold": 0.99,
+              "message": "1/1 load points connected to supports."
+            },
+            {
+              "name": "compliance",
+              "passed": true,
+              "value": 1.0000000000554679,
+              "threshold": 2.0,
+              "message": "Final/best ratio = 1.000 (OK)"
+            },
+            {
+              "name": "grayness",
+              "passed": true,
+              "value": 9.977861550382002e-09,
+              "threshold": 0.15,
+              "message": "Grayness = 0.0000 (crisp)"
+            },
+            {
+              "name": "volume_fraction",
+              "passed": true,
+              "value": 0.3999999999923956,
+              "threshold": 0.4,
+              "message": "Actual vf=0.4000 vs target=0.4000 (diff=0.0000)"
+            },
+            {
+              "name": "convergence",
+              "passed": true,
+              "value": 120.0,
+              "threshold": 120.0,
+              "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+            },
+            {
+              "name": "thin_members",
+              "passed": true,
+              "value": 0.0,
+              "threshold": 0.1,
+              "message": "0/1280 solid elements are thin-members (0.0%)"
+            },
+            {
+              "name": "checkerboard",
+              "passed": true,
+              "value": 0.0669,
+              "threshold": 0.1,
+              "message": "Mean checkerboard index = 0.0669 (clean)"
+            },
+            {
+              "name": "load_path_efficiency",
+              "passed": true,
+              "value": 0.8602,
+              "threshold": 0.15,
+              "message": "Mean load-path efficiency = 0.860 (direct)"
+            }
+          ]
+        }
+      ],
+      "initial_passed": false,
+      "final_passed": true,
+      "attempts_used": 2,
+      "recovered": true
+    }
+  ]
+}

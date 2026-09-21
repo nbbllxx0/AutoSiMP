@@ -1,0 +1,9 @@
+case,dims,n_elem,ndof,n_free,n_fixed,metric,value,threshold,pass
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,matvec_rel_l2,3.2545868257841885e-16,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,matvec_rel_inf,5.995460364293816e-16,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,energy_rel,0.0,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,symmetry_ref_rel,1.229608536268263e-16,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,symmetry_matfree_rel,3.6888256088047894e-16,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,diagonal_rel_l2,9.816471622844532e-17,1e-10,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,fixed_free_overlap,0,0,True
+tool_asymmetric_bracket_vf14,6x4x4,96,525,450,75,operator_case_pass,1,1,True

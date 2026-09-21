@@ -1,0 +1,145 @@
+{
+  "case": "normalized_multiload_bracket_coarse_solve",
+  "notes": "Coarser 80x30 solve of the normalized multi-load bracket workflow case. This is evidence of workflow execution, not certified engineering validation.",
+  "elapsed_seconds": 2.2270004749298096,
+  "spec": {
+    "Lx": 4.0,
+    "Ly": 1.5,
+    "Lz": 0.0,
+    "nelx": 80,
+    "nely": 30,
+    "nelz": 0,
+    "E": 1.0,
+    "nu": 0.3,
+    "volfrac": 0.35,
+    "max_iter": null,
+    "rmin": null,
+    "supports": [
+      {
+        "type": "edge",
+        "edge": "left",
+        "constraint": "fixed"
+      }
+    ],
+    "loads": [
+      {
+        "type": "point",
+        "x": 4.0,
+        "y": 0.75,
+        "z": 0.0,
+        "fx": 0.0,
+        "fy": -1.0,
+        "fz": 0.0
+      },
+      {
+        "type": "point",
+        "x": 4.0,
+        "y": 0.75,
+        "z": 0.0,
+        "fx": -0.25,
+        "fy": 0.0,
+        "fz": 0.0
+      }
+    ],
+    "passive_regions": [
+      {
+        "type": "circle",
+        "cx": 0.55,
+        "cy": 0.45,
+        "radius": 0.12,
+        "kind": "void"
+      },
+      {
+        "type": "circle",
+        "cx": 0.55,
+        "cy": 1.05,
+        "radius": 0.12,
+        "kind": "void"
+      },
+      {
+        "type": "rect",
+        "x0": 3.65,
+        "y0": 0.55,
+        "x1": 4.0,
+        "y1": 0.95,
+        "kind": "solid"
+      }
+    ]
+  },
+  "solver": {
+    "controller": "schedule",
+    "max_iter": 60,
+    "n_iter": 100,
+    "final_compliance": 185.34106596663977,
+    "best_compliance": 185.35266181416367,
+    "best_iteration": 59,
+    "final_grayness": 3.042990367799172e-07,
+    "best_grayness": 0.0003061106276926794,
+    "best_is_valid": true
+  },
+  "evaluation": {
+    "passed": true,
+    "summary": "8 checks: 8 passed, 0 failed.",
+    "checks": [
+      {
+        "name": "connectivity",
+        "passed": true,
+        "value": 1.0,
+        "threshold": 0.99,
+        "message": "1/1 load points connected to supports."
+      },
+      {
+        "name": "compliance",
+        "passed": true,
+        "value": 0.9999374390018984,
+        "threshold": 2.0,
+        "message": "Final/best ratio = 1.000 (OK)"
+      },
+      {
+        "name": "grayness",
+        "passed": true,
+        "value": 3.042990367799172e-07,
+        "threshold": 0.15,
+        "message": "Grayness = 0.0000 (crisp)"
+      },
+      {
+        "name": "volume_fraction",
+        "passed": true,
+        "value": 0.34999999902028006,
+        "threshold": 0.35,
+        "message": "Actual vf=0.3500 vs target=0.3500 (diff=0.0000)"
+      },
+      {
+        "name": "convergence",
+        "passed": true,
+        "value": 100.0,
+        "threshold": 100.0,
+        "message": "Compliance stable (rel_range=0.00000) over final 20 iters."
+      },
+      {
+        "name": "thin_members",
+        "passed": true,
+        "value": 0.0071,
+        "threshold": 0.1,
+        "message": "6/840 solid elements are thin-members (0.7%)"
+      },
+      {
+        "name": "checkerboard",
+        "passed": true,
+        "value": 0.0746,
+        "threshold": 0.1,
+        "message": "Mean checkerboard index = 0.0746 (clean)"
+      },
+      {
+        "name": "load_path_efficiency",
+        "passed": true,
+        "value": 0.8889,
+        "threshold": 0.15,
+        "message": "Mean load-path efficiency = 0.889 (direct)"
+      }
+    ]
+  },
+  "artifacts": {
+    "density_png": "diagnostic_suite/normalized_bracket_solve/normalized_bracket_density.png"
+  }
+}

@@ -1,0 +1,11 @@
+problem,prompt,field_matches,field_total,field_accuracy,Lx_match,Ly_match,mesh_reasonable,volfrac_match,n_supports_match,n_loads_match,n_passive_match,support_semantics_match,load_semantics_match,passive_semantics_match
+western_clamped_free_tip,A beam is clamped along the western boundary and pulled downward at the free-end midpoint.,9,9,1.0,True,True,True,True,True,True,True,True,True,True
+eastern_wall_left_load,Use an eastern wall clamp and apply a downward force at the midpoint of the opposite free side.,7,9,0.7777777777777778,True,True,True,True,True,True,True,False,False,True
+load_rightward_midspan,Clamp the left wall and push the free end horizontally to the right at mid-height.,8,9,0.8888888888888888,True,True,True,True,True,True,True,True,False,True
+multi_load_mixed_direction,Left wall fixed; one downward force at the upper free corner and one upward force at the lower free corner.,7,9,0.7777777777777778,True,True,True,True,True,False,True,True,False,True
+void_off_center,Cantilever with a pipe cutout one third from the clamp and centered vertically.,4,9,0.4444444444444444,False,True,True,False,True,True,False,True,False,False
+solid_bolt_plate,"Keep a solid bolt plate at the loaded end of a cantilever, centered around mid-height.",7,9,0.7777777777777778,True,True,True,True,True,True,False,True,True,False
+top_clamped_bracket,"For an L-shaped bracket, attach the upper edge to the wall and pull the lower right side horizontally outward.",6,9,0.6666666666666666,True,False,True,False,True,True,True,False,True,True
+roller_language,Model a three-unit beam with a vertical restraint at each bottom corner and a downward load at top center.,5,9,0.5555555555555556,False,True,True,True,False,True,True,False,False,True
+distributed_bottom_support,A bridge-like span with vertical support along the underside and pressure over the deck.,8,9,0.8888888888888888,True,True,True,False,True,True,True,True,True,True
+fine_mesh_words,Use a high-resolution four-to-one cantilever with forty percent material.,6,9,0.6666666666666666,False,True,True,False,True,True,True,True,False,True

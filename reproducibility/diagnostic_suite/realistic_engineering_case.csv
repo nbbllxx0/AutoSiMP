@@ -1,0 +1,2 @@
+deprecated_file,current_replacement,note
+true,diagnostic_suite/normalized_bracket_case.csv,Legacy filename retained because Windows denied moving it; use the normalized bracket case file as current evidence.

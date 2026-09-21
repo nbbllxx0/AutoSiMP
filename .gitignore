@@ -36,3 +36,14 @@ tmp_build_verify*/
 Thumbs.db
 *.swp
 *.tmp
+
+# The manuscript evidence archive is intentionally versioned, including
+# retained result folders and density arrays that would otherwise match the
+# generic local-output rules above.
+!reproducibility/**
+
+# The deposited head-to-head, surfacing, spec-match and pipeline result files
+# cited by the manuscript are versioned deliberately; they would otherwise be
+# caught by the generic results*/ rule above.
+!results/
+!results/**

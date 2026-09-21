@@ -1,0 +1,6 @@
+tempfile=<temporary-directory>
+[GPUFEMSolver] Requested=cupy Resolved=cupy  ndof=6,825
+[SolverV4] MatrixFreeKff ready - n_elem=1,728 ke_size=24 n_free=6,552 ndof=6,825
+[SolverV4] FusedMatvec ready for paper-4 fine smoothing.
+[SolverV4] Building GalerkinMatFreeGMG: 24x12x6, 4 levels, fine=fp32, degree=2
+wrote backend_3d/results_3d_suite/runs/cantilever_z_24x12x6_vf30

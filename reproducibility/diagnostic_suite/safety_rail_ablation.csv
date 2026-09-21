@@ -1,0 +1,9 @@
+name,expected,with_safety_detected,with_safety_error_count,with_safety_warning_count,with_safety_blocks_or_flags,without_safety_blocks_or_flags,ablation_failure
+missing_support,"['rigid_body_mode', 'schema_physical_plausibility']","['rigid_body_mode', 'schema_physical_plausibility']",2,0,True,False,True
+missing_load,['schema_physical_plausibility'],['schema_physical_plausibility'],1,0,True,False,True
+load_on_fixed_edge,['load_on_fixed_dof'],['load_on_fixed_dof'],1,0,True,False,True
+rigid_y_unconstrained,['rigid_body_mode'],['rigid_body_mode'],1,0,True,False,True
+load_inside_void,['passive_load_overlap'],['passive_load_overlap'],1,0,True,False,True
+support_inside_void,['passive_support_overlap'],['passive_support_overlap'],1,0,True,False,True
+ambiguous_load_phrase,['boundary_ambiguity'],['boundary_ambiguity'],0,1,True,False,True
+real_units_warning,['units_material_warning'],['units_material_warning'],0,1,True,False,True

@@ -1,0 +1,160 @@
+{
+  "overall": {
+    "n_rows": 150,
+    "n_models": 3,
+    "n_prompts": 10,
+    "parse_success_rate": 1.0,
+    "ambiguity_flag_rate": 0.4,
+    "manual_repair_rate": 0.1,
+    "mean_field_accuracy": 0.7936507936507936,
+    "mean_blocking_errors": 0.1,
+    "mean_warnings": 0.5
+  },
+  "by_model": {
+    "gemini-3.1-flash-lite": {
+      "n_rows": 50,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.1,
+      "mean_field_accuracy": 0.7936507936507937,
+      "mean_blocking_errors": 0.1,
+      "mean_warnings": 0.5
+    },
+    "gemini-3.1-flash-lite-preview": {
+      "n_rows": 50,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.1,
+      "mean_field_accuracy": 0.7936507936507937,
+      "mean_blocking_errors": 0.1,
+      "mean_warnings": 0.5
+    },
+    "gemini-flash-lite-latest": {
+      "n_rows": 50,
+      "n_models": 1,
+      "n_prompts": 10,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.4,
+      "manual_repair_rate": 0.1,
+      "mean_field_accuracy": 0.7936507936507937,
+      "mean_blocking_errors": 0.1,
+      "mean_warnings": 0.5
+    }
+  },
+  "by_prompt": {
+    "M1": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M10": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M2": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M3": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 1.0,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M4": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.7777777777777778,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M5": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 1.0,
+      "mean_field_accuracy": 0.4444444444444444,
+      "mean_blocking_errors": 1.0,
+      "mean_warnings": 1.0
+    },
+    "M6": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M7": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.6666666666666666,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    },
+    "M8": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 1.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": 0.6666666666666666,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 1.0
+    },
+    "M9": {
+      "n_rows": 15,
+      "n_models": 3,
+      "n_prompts": 1,
+      "parse_success_rate": 1.0,
+      "ambiguity_flag_rate": 0.0,
+      "manual_repair_rate": 0.0,
+      "mean_field_accuracy": null,
+      "mean_blocking_errors": 0.0,
+      "mean_warnings": 0.0
+    }
+  }
+}

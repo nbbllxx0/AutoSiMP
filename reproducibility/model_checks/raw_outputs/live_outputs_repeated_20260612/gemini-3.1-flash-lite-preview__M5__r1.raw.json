@@ -1,0 +1,41 @@
+{
+  "Lx": 1.0,
+  "Ly": 1.0,
+  "Lz": 0.0,
+  "nelx": 60,
+  "nely": 60,
+  "nelz": 0,
+  "E": 1.0,
+  "nu": 0.3,
+  "volfrac": 0.4,
+  "supports": [
+    {
+      "type": "edge",
+      "edge": "top",
+      "constraint": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "type": "point",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "fx": 1.0,
+      "fy": 0.0,
+      "fz": 0.0
+    }
+  ],
+  "passive_regions": [
+    {
+      "type": "rect",
+      "x0": 0.5,
+      "y0": 0.0,
+      "x1": 1.0,
+      "y1": 0.5,
+      "kind": "void"
+    }
+  ],
+  "max_iter": 100,
+  "rmin": 1.5
+}

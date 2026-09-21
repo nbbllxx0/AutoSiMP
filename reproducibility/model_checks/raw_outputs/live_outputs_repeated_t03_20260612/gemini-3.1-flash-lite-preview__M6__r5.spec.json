@@ -1,0 +1,40 @@
+{
+  "Lx": 2.0,
+  "Ly": 1.0,
+  "Lz": 0.0,
+  "nelx": 60,
+  "nely": 30,
+  "nelz": 0,
+  "E": 1.0,
+  "nu": 0.3,
+  "volfrac": 0.4,
+  "max_iter": 100,
+  "rmin": 1.5,
+  "supports": [
+    {
+      "type": "edge",
+      "edge": "left",
+      "constraint": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "type": "point",
+      "x": 1.8,
+      "y": 0.2,
+      "z": 0.0,
+      "fx": 0.0,
+      "fy": -1.0,
+      "fz": 0.0
+    }
+  ],
+  "passive_regions": [
+    {
+      "type": "circle",
+      "cx": 1.8,
+      "cy": 0.5,
+      "radius": 0.15,
+      "kind": "void"
+    }
+  ]
+}

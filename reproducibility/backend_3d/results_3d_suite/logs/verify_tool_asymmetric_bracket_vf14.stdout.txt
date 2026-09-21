@@ -1,0 +1,28 @@
+tempfile=<temporary-directory>
+{
+  "out_dir": "revision_2026-07-07_AEI_3d_upgrade/experiments_3d_upgrade/results_3d_suite/verify/tool_asymmetric_bracket_vf14",
+  "case_dims": {
+    "tool_asymmetric_bracket_vf14": "6x4x4"
+  },
+  "operator_rows": 8,
+  "sensitivity_rows": 5,
+  "filter_rows": 2,
+  "operator_max_value_by_metric": {
+    "matvec_rel_l2": 3.2545868257841885e-16,
+    "matvec_rel_inf": 5.995460364293816e-16,
+    "energy_rel": 0.0,
+    "symmetry_ref_rel": 1.229608536268263e-16,
+    "symmetry_matfree_rel": 3.6888256088047894e-16,
+    "diagonal_rel_l2": 9.816471622844532e-17,
+    "fixed_free_overlap": 0.0,
+    "operator_case_pass": 1.0
+  },
+  "sensitivity_max_rel_error": 2.56908434932069e-08,
+  "filter_max_value": 7.771561172376096e-16,
+  "all_pass": true,
+  "thresholds": {
+    "operator_rel": 1e-10,
+    "sensitivity_rel": 0.0005,
+    "filter_rel": 1e-12
+  }
+}

@@ -1,0 +1,3 @@
+tempfile=<temporary-directory>
+wrote backend_3d/results_3d_suite/runs/cantilever_y_24x12x6_vf30/density_projection.png
+wrote backend_3d/results_3d_suite/runs/cantilever_y_24x12x6_vf30/render_metadata.json

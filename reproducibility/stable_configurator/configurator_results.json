@@ -1,0 +1,797 @@
+{
+  "n_tested": 15,
+  "n_skipped": 0,
+  "all_pass_rate": 1.0,
+  "spec_valid_rate": 1.0,
+  "field_accuracy": 1.0,
+  "details": [
+    {
+      "index": 0,
+      "prompt": "A cantilever beam, left edge fixed, downward point load at the middle of the right edge. 50% volume fraction.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 1,
+      "n_total": 1,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 60,
+        "nely": 30,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 1,
+      "prompt": "MBB beam with symmetry on the left, roller support at bottom right, downward load at top left.",
+      "skipped": false,
+      "checks": {
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 0,
+      "n_total": 0,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "pin_x"
+          },
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.0,
+            "constraint": "roller_y"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 2,
+      "prompt": "Bridge: 4 meters wide, 1 meter tall. Pinned at both bottom corners. Uniform downward load on top. 30% volume fraction.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "Lx": true,
+        "Ly": true,
+        "n_supports": true,
+        "has_distributed_top_load": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 5,
+      "n_total": 5,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 4.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 30,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.3,
+        "supports": [
+          {
+            "type": "point",
+            "x": 0.0,
+            "y": 0.0,
+            "constraint": "fixed",
+            "z": 0.0
+          },
+          {
+            "type": "point",
+            "x": 4.0,
+            "y": 0.0,
+            "constraint": "pin_y",
+            "z": 0.0
+          }
+        ],
+        "loads": [
+          {
+            "type": "distributed",
+            "edge": "top",
+            "magnitude": -1.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 3,
+      "prompt": "Cantilever with a circular hole in the center for a pipe, radius 0.15.",
+      "skipped": false,
+      "checks": {
+        "has_passive_void_circle": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 1,
+      "n_total": 1,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [
+          {
+            "type": "circle",
+            "cx": 1.0,
+            "cy": 0.5,
+            "radius": 0.15,
+            "kind": "void"
+          }
+        ],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 4,
+      "prompt": "Short deep beam: 1 unit wide, 2 units tall. Left edge clamped. Horizontal load pointing right at the midpoint of the right edge.",
+      "skipped": false,
+      "checks": {
+        "has_horizontal_load": true,
+        "load_fx_positive": true,
+        "Lx_less_than_Ly": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 1.0,
+        "Ly": 2.0,
+        "Lz": 0.0,
+        "nelx": 30,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.0,
+            "fx": 1.0,
+            "fy": 0.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 5,
+      "prompt": "Simply supported beam, 3 units long, 1 unit tall. Pin support at bottom-left, roller at bottom-right. Point load at the top center, pointing downward.",
+      "skipped": false,
+      "checks": {
+        "Lx": true,
+        "Ly": true,
+        "n_supports": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 3.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 180,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "point",
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "constraint": "fixed"
+          },
+          {
+            "type": "point",
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0,
+            "constraint": "roller_y"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 1.5,
+            "y": 1.0,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 6,
+      "prompt": "Cantilever beam with two point loads: one at the top-right corner going down, one at the bottom-right corner going down. Left edge fixed. Volume fraction 0.5.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "n_loads": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 2,
+      "n_total": 2,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 1.0,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          },
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 7,
+      "prompt": "A bracket: left edge fixed, and there's a rectangular solid reinforced zone at the right edge where the bolt plate is, from y=0.3 to y=0.7, extending 0.2 units from the right edge. Downward load at the right edge middle.",
+      "skipped": false,
+      "checks": {
+        "has_passive_solid_rect": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 1,
+      "n_total": 1,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [
+          {
+            "type": "rect",
+            "x0": 1.8,
+            "y0": 0.3,
+            "x1": 2.0,
+            "y1": 0.7,
+            "kind": "solid"
+          }
+        ],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 8,
+      "prompt": "Fine mesh cantilever, 120 by 60 elements, left fixed, tip load downward, 40 percent material.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "nelx": true,
+        "nely": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 9,
+      "prompt": "Cantilever with combined loading: downward force and a horizontal force at the tip. Left edge clamped. Default volume fraction.",
+      "skipped": false,
+      "checks": {
+        "has_fx_load": true,
+        "has_fy_load": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 2,
+      "n_total": 2,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 1.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 10,
+      "prompt": "Square domain, 1x1. All four edges fixed. Point load at the center going down.",
+      "skipped": false,
+      "checks": {
+        "Lx": true,
+        "Ly": true,
+        "n_supports_ge": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 1.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 60,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          },
+          {
+            "type": "edge",
+            "edge": "right",
+            "constraint": "fixed"
+          },
+          {
+            "type": "edge",
+            "edge": "top",
+            "constraint": "fixed"
+          },
+          {
+            "type": "edge",
+            "edge": "bottom",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 11,
+      "prompt": "Cantilever, 60 percent volume fraction, coarse mesh.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "nelx_le": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 2,
+      "n_total": 2,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 40,
+        "nely": 20,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.6,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 12,
+      "prompt": "L-shaped bracket. Top edge fixed. Horizontal load on the right side pointing left.",
+      "skipped": false,
+      "checks": {
+        "has_horizontal_load": true,
+        "load_fx_negative": true,
+        "has_top_fixed": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 1.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 60,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "top",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 1.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": -1.0,
+            "fy": 0.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [
+          {
+            "type": "rect",
+            "x0": 0.5,
+            "y0": 0.0,
+            "x1": 1.0,
+            "y1": 0.5,
+            "kind": "void"
+          }
+        ],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    },
+    {
+      "index": 13,
+      "prompt": "MBB beam, 6:1 aspect ratio, 50% volume fraction, fine mesh.",
+      "skipped": false,
+      "checks": {
+        "volfrac": true,
+        "aspect_ratio_near": true,
+        "nelx_ge": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 3,
+      "n_total": 3,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 6.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 180,
+        "nely": 30,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.5,
+        "supports": [
+          {
+            "type": "point",
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "constraint": "pin_x"
+          },
+          {
+            "type": "point",
+            "x": 6.0,
+            "y": 0.0,
+            "z": 0.0,
+            "constraint": "pin_y"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [],
+        "max_iter": null,
+        "rmin": null
+      }
+    },
+    {
+      "index": 14,
+      "prompt": "Cantilever with two circular voids, one at 1/3 of the length and one at 2/3.",
+      "skipped": false,
+      "checks": {
+        "n_passive_circles": true,
+        "spec_valid": true
+      },
+      "all_passed": true,
+      "n_pass": 1,
+      "n_total": 1,
+      "spec_valid": true,
+      "raw_dict": {
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "nelx": 120,
+        "nely": 60,
+        "nelz": 0,
+        "E": 1.0,
+        "nu": 0.3,
+        "volfrac": 0.4,
+        "supports": [
+          {
+            "type": "edge",
+            "edge": "left",
+            "constraint": "fixed"
+          }
+        ],
+        "loads": [
+          {
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0,
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0
+          }
+        ],
+        "passive_regions": [
+          {
+            "type": "circle",
+            "cx": 0.66,
+            "cy": 0.5,
+            "radius": 0.1,
+            "kind": "void"
+          },
+          {
+            "type": "circle",
+            "cx": 1.33,
+            "cy": 0.5,
+            "radius": 0.1,
+            "kind": "void"
+          }
+        ],
+        "max_iter": 100,
+        "rmin": 1.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "meta": {
+    "frozen_at_utc": "2026-09-20T21:53:40Z",
+    "n_cases": 10,
+    "n_unrecoverable": 2,
+    "rule": "Do not guess. UNRECOVERABLE is a reportable finding.",
+    "task": "E0"
+  },
+  "specs": {
+    "bridge": {
+      "evidence": "Do not guess the two support entries. Index vs footnote conflict on which field mismatched is itself a reproducibility finding.",
+      "known_counts_from_pipeline_results": {
+        "config_Lx_match": true,
+        "config_Ly_match": true,
+        "config_n_loads_llm": 1,
+        "config_n_loads_match": true,
+        "config_n_passive_llm": 0,
+        "config_n_passive_match": true,
+        "config_n_supports_llm": 2,
+        "config_n_supports_match": false,
+        "config_volfrac_match": true
+      },
+      "partial_geometry_from_reference_only": {
+        "Lx": 4.0,
+        "Ly": 1.0,
+        "nelx": 120,
+        "nely": 30,
+        "note": "Geometry/mesh/volfrac match flags are true, but the generated support list is unknown. Partial geometry is recorded for audit only and is not a solvable spec.",
+        "volfrac": 0.3
+      },
+      "prompt": "Bridge structure. 4 meters wide, 1 meter tall. Bottom edge supported vertically (pin_y). Uniform downward pressure on the top edge. Use 30% material.",
+      "spec": null,
+      "status": "UNRECOVERABLE",
+      "unknown_fields": [
+        "supports: identities of the two generated support entries (pipeline_results.json config_n_supports_llm=2 vs canonical 1; Table 5 footnote L1872-1877)",
+        "load-field composition: canonical_prompt_spec_index.md says the reported mismatch is load-field handling; Table 5 footnote says support count. config_n_loads_match=true so load *count* matches; the actual load object is not stored."
+      ]
+    },
+    "cantilever_basic": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Cantilever beam. Left edge is clamped. Downward point load at the center of the right edge. 50% volume fraction.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 60,
+        "nely": 30,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "cantilever_low_vf": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Lightweight cantilever beam. Left wall fixed. Load at the tip pointing down. Only 30% material allowed.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 60,
+        "nely": 30,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.3
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "cantilever_with_hole": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Cantilever beam, left edge fixed, tip load downward at mid-right. There's a circular hole in the center of the beam for a pipe, radius 0.15. Use 40% volume fraction.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 80,
+        "nely": 40,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [
+          {
+            "cx": 1.0,
+            "cy": 0.5,
+            "kind": "void",
+            "radius": 0.15,
+            "type": "circle"
+          }
+        ],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.4
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "deep_beam_shear": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Short deep cantilever: 1 unit wide, 2 units tall. Left edge clamped. Downward load at the midpoint of the right edge. 50 percent material.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 1.0,
+        "Ly": 2.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 1.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 30,
+        "nely": 60,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "dual_load": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Cantilever with two loads: one at the upper-right and one at the lower-right, both pushing down. Left edge is fixed. 50% volume fraction.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 2.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": 0.75,
+            "z": 0.0
+          },
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": 0.25,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 80,
+        "nely": 40,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "high_aspect": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Very long cantilever, 6 to 1 aspect ratio. Fixed on the left. Downward tip load. 50% volume fraction.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 6.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 6.0,
+            "y": 0.5,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 120,
+        "nely": 20,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "left",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "lbracket": {
+      "evidence": "canonical_prompt_spec_index.md: valid but unintended; load location semantics do not match. y is not in any archived JSON.",
+      "known_counts_from_pipeline_results": {
+        "config_Lx_match": true,
+        "config_Ly_match": true,
+        "config_n_loads_llm": 1,
+        "config_n_loads_match": true,
+        "config_n_passive_llm": 0,
+        "config_n_passive_match": true,
+        "config_n_supports_llm": 1,
+        "config_n_supports_match": true,
+        "config_volfrac_match": true
+      },
+      "partial_from_reference_except_load_y": {
+        "Lx": 2.0,
+        "Ly": 2.0,
+        "loads": [
+          {
+            "fx": 1.0,
+            "fy": 0.0,
+            "type": "point",
+            "x": 2.0,
+            "y": "UNRECOVERABLE"
+          }
+        ],
+        "nelx": 60,
+        "nely": 60,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "edge": "top",
+            "type": "edge"
+          }
+        ],
+        "volfrac": 0.4
+      },
+      "prompt": "L-bracket: square domain 2x2. Top edge fixed to the wall. Horizontal load pointing right at the lower part of the right edge. 40% material.",
+      "spec": null,
+      "status": "UNRECOVERABLE",
+      "unknown_fields": [
+        "loads[0].y: Table 5 footnote L1878-1882 and the spec index state the horizontal load sits at a different y than the canonical reference (x=2.0, y=0.5, fx=1.0). The generated y is not stored in pipeline_results.json (n_loads_match=true; load_semantics is not stored). UNRECOVERABLE."
+      ]
+    },
+    "mbb_beam": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "MBB beam, 3:1 aspect ratio. Symmetry boundary condition on the left edge, roller support at the bottom right corner. Downward load at the top left corner. Half material.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 3.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 90,
+        "nely": 30,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "pin_x",
+            "edge": "left",
+            "type": "edge"
+          },
+          {
+            "constraint": "pin_y",
+            "type": "point",
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    },
+    "simply_supported_center": {
+      "evidence": "canonical_prompt_spec_index.md: semantically equivalent at field level; Table 5 top-level 6/6. Frozen equal to the author-defined reference. Subfield compliance gaps named in the manuscript (simply-supported, dual-load) are not stored as coordinates anywhere and are not guessed.",
+      "prompt": "Simply supported beam. Fixed supports at both bottom corners. Point load at the top center, going down. 50% volume fraction. 3 to 1 aspect ratio.",
+      "spec": {
+        "E": 1.0,
+        "Lx": 3.0,
+        "Ly": 1.0,
+        "Lz": 0.0,
+        "loads": [
+          {
+            "fx": 0.0,
+            "fy": -1.0,
+            "fz": 0.0,
+            "type": "point",
+            "x": 1.5,
+            "y": 1.0,
+            "z": 0.0
+          }
+        ],
+        "max_iter": null,
+        "nelx": 90,
+        "nely": 30,
+        "nelz": 0,
+        "nu": 0.3,
+        "passive_regions": [],
+        "rmin": null,
+        "supports": [
+          {
+            "constraint": "fixed",
+            "type": "point",
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          {
+            "constraint": "fixed",
+            "type": "point",
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        ],
+        "volfrac": 0.5
+      },
+      "status": "recovered_as_reference",
+      "unknown_fields": []
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "density_threshold": 0.5,
+  "scalar": "density",
+  "scalar_normalization": "per_case_0_1",
+  "camera": "orthographic_default",
+  "source": "OptimizationResult.save"
+}

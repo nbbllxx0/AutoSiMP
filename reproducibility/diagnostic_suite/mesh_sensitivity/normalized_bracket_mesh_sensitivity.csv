@@ -1,0 +1,4 @@
+case,nelx,nely,elements,elapsed_seconds,controller,max_iter,n_iter,final_compliance,best_compliance,best_iteration,final_grayness,best_grayness,best_is_valid,evaluation_passed,evaluation_summary,density_png
+coarse_60x24,60,24,1440,1.2050013542175293,schedule,60,100,159.13923714964898,159.19784672654643,60,1.485971953819985e-07,0.002367587887276366,True,True,"8 checks: 8 passed, 0 failed.",normalized_bracket_coarse_60x24_density.png
+medium_80x30,80,30,2400,2.200000047683716,schedule,60,100,185.34106596663977,185.35266181416367,59,3.042990367799172e-07,0.0003061106276926794,True,True,"8 checks: 8 passed, 0 failed.",normalized_bracket_medium_80x30_density.png
+fine_90x34,90,34,3060,3.027630567550659,schedule,60,100,183.93450096038922,183.9990216538306,60,4.58959896677645e-08,0.0016303938163986273,True,True,"8 checks: 8 passed, 0 failed.",normalized_bracket_fine_90x34_density.png

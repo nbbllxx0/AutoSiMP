@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "wall_s": 119.62678150000283,
+  "stdout": "backend_3d/results_3d_suite/logs/run_cantilever_y_24x12x6_vf30.stdout.txt",
+  "stderr": "backend_3d/results_3d_suite/logs/run_cantilever_y_24x12x6_vf30.stderr.txt",
+  "cmd": [
+    "python",
+    "backend_3d/run_topogpu_with_temp_patch.py",
+    "--topogpu",
+    "run",
+    "backend_3d/cases/cantilever_y_24x12x6_vf30.yaml",
+    "--backend",
+    "cupy",
+    "--iters",
+    "5",
+    "--out",
+    "backend_3d/results_3d_suite/runs/cantilever_y_24x12x6_vf30"
+  ]
+}

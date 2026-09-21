@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "case_family": "normalized_multiload_bracket_mesh_sensitivity",
+    "n": 3,
+    "passed": 3,
+    "min_elements": 1440,
+    "max_elements": 3060,
+    "min_final_compliance": 159.13923714964898,
+    "max_final_compliance": 185.34106596663977,
+    "notes": "Mesh-sensitivity evidence for workflow robustness. Compliance values are not directly certified engineering allowables."
+  },
+  "rows": [
+    {
+      "case": "coarse_60x24",
+      "nelx": 60,
+      "nely": 24,
+      "elements": 1440,
+      "elapsed_seconds": 1.2050013542175293,
+      "controller": "schedule",
+      "max_iter": 60,
+      "n_iter": 100,
+      "final_compliance": 159.13923714964898,
+      "best_compliance": 159.19784672654643,
+      "best_iteration": 60,
+      "final_grayness": 1.485971953819985e-07,
+      "best_grayness": 0.002367587887276366,
+      "best_is_valid": true,
+      "evaluation_passed": true,
+      "evaluation_summary": "8 checks: 8 passed, 0 failed.",
+      "density_png": "diagnostic_suite/mesh_sensitivity/normalized_bracket_coarse_60x24_density.png"
+    },
+    {
+      "case": "medium_80x30",
+      "nelx": 80,
+      "nely": 30,
+      "elements": 2400,
+      "elapsed_seconds": 2.200000047683716,
+      "controller": "schedule",
+      "max_iter": 60,
+      "n_iter": 100,
+      "final_compliance": 185.34106596663977,
+      "best_compliance": 185.35266181416367,
+      "best_iteration": 59,
+      "final_grayness": 3.042990367799172e-07,
+      "best_grayness": 0.0003061106276926794,
+      "best_is_valid": true,
+      "evaluation_passed": true,
+      "evaluation_summary": "8 checks: 8 passed, 0 failed.",
+      "density_png": "diagnostic_suite/mesh_sensitivity/normalized_bracket_medium_80x30_density.png"
+    },
+    {
+      "case": "fine_90x34",
+      "nelx": 90,
+      "nely": 34,
+      "elements": 3060,
+      "elapsed_seconds": 3.027630567550659,
+      "controller": "schedule",
+      "max_iter": 60,
+      "n_iter": 100,
+      "final_compliance": 183.93450096038922,
+      "best_compliance": 183.9990216538306,
+      "best_iteration": 60,
+      "final_grayness": 4.58959896677645e-08,
+      "best_grayness": 0.0016303938163986273,
+      "best_is_valid": true,
+      "evaluation_passed": true,
+      "evaluation_summary": "8 checks: 8 passed, 0 failed.",
+      "density_png": "diagnostic_suite/mesh_sensitivity/normalized_bracket_fine_90x34_density.png"
+    }
+  ]
+}

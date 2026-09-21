@@ -1,0 +1,11 @@
+problem,prompt,field_matches,field_total,field_accuracy,Lx_match,Ly_match,mesh_reasonable,volfrac_match,n_supports_match,n_loads_match,n_passive_match,support_semantics_match,load_semantics_match,passive_semantics_match
+cantilever_basic,Cantilever beam. Left edge is clamped. Downward point load at the center of the right edge. 50% volume fraction.,9,9,1.0,True,True,True,True,True,True,True,True,True,True
+mbb_beam,"MBB beam, 3:1 aspect ratio. Symmetry boundary condition on the left edge, roller support at the bottom right corner. Downward load at the top left corner. Half material.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+bridge,"Bridge structure. 4 meters wide, 1 meter tall. Bottom edge supported vertically (pin_y). Uniform downward pressure on the top edge. Use 30% material.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+cantilever_with_hole,"Cantilever beam, left edge fixed, tip load downward at mid-right. There's a circular hole in the center of the beam for a pipe, radius 0.15. Use 40% volume fraction.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+deep_beam_shear,"Short deep cantilever: 1 unit wide, 2 units tall. Left edge clamped. Downward load at the midpoint of the right edge. 50 percent material.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+simply_supported_center,"Simply supported beam. Fixed supports at both bottom corners. Point load at the top center, going down. 50% volume fraction. 3 to 1 aspect ratio.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+cantilever_low_vf,Lightweight cantilever beam. Left wall fixed. Load at the tip pointing down. Only 30% material allowed.,9,9,1.0,True,True,True,True,True,True,True,True,True,True
+dual_load,"Cantilever with two loads: one at the upper-right and one at the lower-right, both pushing down. Left edge is fixed. 50% volume fraction.",9,9,1.0,True,True,True,True,True,True,True,True,True,True
+lbracket,L-bracket: square domain 2x2. Top edge fixed to the wall. Horizontal load pointing right at the lower part of the right edge. 40% material.,8,9,0.8888888888888888,True,True,True,True,True,True,True,True,False,True
+high_aspect,"Very long cantilever, 6 to 1 aspect ratio. Fixed on the left. Downward tip load. 50% volume fraction.",9,9,1.0,True,True,True,True,True,True,True,True,True,True

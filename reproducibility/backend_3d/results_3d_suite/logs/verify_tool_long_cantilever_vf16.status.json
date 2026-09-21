@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "timeout": false,
+  "wall_s": 9.720938299986301,
+  "stdout": "backend_3d/results_3d_suite/logs/verify_tool_long_cantilever_vf16.stdout.txt",
+  "stderr": "backend_3d/results_3d_suite/logs/verify_tool_long_cantilever_vf16.stderr.txt",
+  "cmd": [
+    "python",
+    "backend_3d/run_topogpu_with_temp_patch.py",
+    "--topogpu",
+    "verify",
+    "--case",
+    "tool_long_cantilever_vf16",
+    "--dims",
+    "6x4x4",
+    "--out",
+    "backend_3d/results_3d_suite/verify/tool_long_cantilever_vf16"
+  ]
+}

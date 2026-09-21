@@ -1,6 +1,6 @@
 # AutoSiMP
 
-AutoSiMP is a human-verifiable workflow for configuring SIMP topology optimization problems from natural language. It drafts an editable `ProblemSpec`, converts the specification into solver-ready boundary conditions and passive-region masks, runs a three-field SIMP solver, and reports deterministic numerical checks.
+AutoSiMP is an inspectable workflow for configuring SIMP topology optimization problems from natural language. It drafts an editable `ProblemSpec`, converts the specification into solver-ready boundary conditions and passive-region masks, runs a three-field SIMP solver, and reports deterministic numerical checks.
 
 The code is intended for research reproduction and inspection. It does not certify engineering designs; users should review generated specifications, units, loads, materials, and acceptance criteria before relying on any result.
 
@@ -17,6 +17,9 @@ The code is intended for research reproduction and inspection. It does not certi
 - `server.py` - Flask backend for the browser demo.
 - `autosimp-demo/autosimp-demo/` - full React/Vite browser demo source.
 - `web_demo/` - minimal React/Vite smoke demo source.
+- `reproducibility/` - canonical prompt/spec index, deterministic diagnostics,
+  raw and parsed model outputs, aggregate benchmark tables, retry records,
+  normalized-bracket results, and bounded 3-D backend evidence.
 
 ## Install
 
@@ -114,25 +117,34 @@ Full benchmark runs can take hours depending on mesh size, controller choice, an
 
 ## Validation Scope
 
-The associated manuscript evaluates AutoSiMP as a bounded, human-verifiable
+The associated manuscript evaluates AutoSiMP as a bounded, inspectable
 problem-specification and solver-orchestration workflow. The code release
 supports reproduction of the solver, controller, boundary-condition generator,
-evaluator, and browser inspection workflow; manuscript-side diagnostic harnesses
-are maintained separately from this release.
+evaluator, and browser inspection workflow. The `reproducibility/` directory
+contains the manuscript-side diagnostic harnesses, canonical prompt/reference
+index, row-level CSV/JSON outputs, raw and parsed Gemini artifacts, result
+summaries, retry records, normalized-bracket data, and bounded 3-D backend
+evidence. See `reproducibility/README.md` and its SHA-256 manifest.
 
 Current manuscript evidence includes:
 
-- 10 canonical configuration prompts and a 100-prompt held-out diagnostic suite
-  covering paraphrase, spatial language, multi-load cases, passive regions, and
-  supported ambiguous wording.
-- Rule-only parser ablation results showing 89/90 canonical fields, 67/90
-  challenge fields, and 652/900 held-out diagnostic fields.
-- A template-style configuration proxy covering 121 prompts/cases with a 4.09/9
-  mean manual-completion burden.
+- 10 canonical configuration prompts, 10 challenge prompts, a 100-prompt held-out
+  suite, and an eight-prompt rectangular 3-D configuration track.
+- Frozen-spec match: 8 of 10 nine-field exact; four of those eight differ in
+  archived mesh; Bridge and L-bracket are semantic failures.
+- Matched LLM vs rule-only scores: 85/90 vs 89/90 (canonical), 71/90 vs 67/90
+  (challenge), 670/900 vs 652/900 (held-out).
+- Preview-surfacing (E11): 32 detections against 71 named silent misses on 120
+  prompts (31% detection). The gate detects linguistic hedges, not semantic error.
+- 3-D configuration track: 79/80 on an own ten-field denominator at canonical
+  difficulty.
+- Rule-only parser ablation: 89/90 canonical, 67/90 challenge, 652/900 held-out.
+- A template-style field-completion proxy (mean 4.09 of nine fields).
 - Repeated Gemini Flash-Lite-family model checks and a six-model Gemini-family
   stress test. These runs are single-provider evidence and should not be
   interpreted as provider-diverse robustness.
 - A normalized multi-load bracket workflow case with solver/evaluator checks.
+- Aggregate pipeline, controller, retry, and coarse 3-D result tables.
 
 The release does not include recruited user timing, external GUI/operator
 timing, independent engineering sign-off, or provider-diverse model evidence.
@@ -203,7 +215,8 @@ Backend endpoints:
 - The configurator safety rails reject or repair many invalid specifications, but generated specs should still be reviewed before solving.
 - 3-D and large 2-D meshes benefit from `pyamg`.
 - The browser interface is an inspection aid; the Python CLI is the most direct reproduction path.
-- Generated benchmark outputs and local manuscript working files are intentionally not part of the code release.
+- Manuscript-facing benchmark outputs are versioned under `reproducibility/`;
+  unrelated local solver outputs and manuscript working files remain excluded.
 
 ## License
 
@@ -213,5 +226,5 @@ This repository is released under the BSD 3-Clause License. See `LICENSE`.
 
 If you use this code, cite the associated AutoSiMP manuscript and the related LLM-controller paper:
 
-- AutoSiMP: Human-Verifiable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization.
-- Large Language Models as Optimization Controllers: Adaptive Continuation for SIMP Topology Optimization, arXiv:2603.25099.
+- AutoSiMP: Inspectable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization, arXiv:2603.27000 (title as in the ADES submission).
+- Yang, Wang, Wang, Large language models as optimization controllers: Adaptive continuation for SIMP topology optimization, Advances in Engineering Software 223, 104304, 2026, doi:10.1016/j.advengsoft.2026.104304.
