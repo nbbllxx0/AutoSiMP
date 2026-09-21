@@ -21,8 +21,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-PINNED_PYTHON_NOTE = r"C:\Users\YSL0\AppData\Local\Programs\Python\Python312\python.exe"
-IMPL = Path(r"E:\AI\AUTO\AutoSiMP_full_implementation")
+IMPL = Path(__file__).resolve().parents[1]
 DIAG = IMPL / "reproducibility" / "diagnostic_suite"
 MODEL = "gemini-3.1-flash-lite"
 N_LLM_REPEATS = 3

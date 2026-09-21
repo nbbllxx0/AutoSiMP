@@ -67,9 +67,9 @@
       "final_compliance": 4.8703232512549794,
       "best_compliance": 4.870323250795584,
       "n_iter": 120,
-      "npy": "E:\\AI\\AUTO\\revision_2026-09-20_aes\\evidence\\e12_cantilever_3d_rho.npy",
-      "figure_png": "E:\\AI\\AUTO\\revision_2026-09-20_aes\\figures\\fig_e12_cantilever_3d_midz.png",
-      "figure_pdf": "E:\\AI\\AUTO\\revision_2026-09-20_aes\\figures\\fig_e12_cantilever_3d_midz.pdf"
+      "npy": "results/e12_cantilever_3d_rho.npy",
+      "figure_png": "results/fig_e12_cantilever_3d_midz.png",
+      "figure_pdf": "results/fig_e12_cantilever_3d_midz.pdf"
     }
   },
   "cases": [

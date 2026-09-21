@@ -11,7 +11,7 @@ import json
 import sys
 from pathlib import Path
 
-IMPL = Path(r"E:\AI\AUTO\AutoSiMP_full_implementation")
+IMPL = Path(__file__).resolve().parents[1]
 DIAG = IMPL / "reproducibility" / "diagnostic_suite"
 sys.path.insert(0, str(IMPL))
 sys.path.insert(0, str(DIAG))
@@ -23,8 +23,8 @@ from revision_experiments import (  # noqa: E402
     expanded_prompt_generalization_cases,
 )
 
-P0 = Path(r"E:\AI\AUTO\revision_2026-09-20_aes\p0_headtohead\headtohead_results.json")
-OUT = Path(r"E:\AI\AUTO\revision_2026-09-20_aes\evidence")
+P0 = IMPL / "results" / "headtohead_results.json"
+OUT = IMPL / "results"
 
 
 def cases_by_name() -> dict[str, dict]:

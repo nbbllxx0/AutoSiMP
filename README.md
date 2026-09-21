@@ -226,5 +226,5 @@ This repository is released under the BSD 3-Clause License. See `LICENSE`.
 
 If you use this code, cite the associated AutoSiMP manuscript and the related LLM-controller paper:
 
-- AutoSiMP: Inspectable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization, arXiv:2603.27000 (title as in the ADES submission).
+- An earlier preprint of this work is arXiv:2603.27000; its title and claims predate this revision.
 - Yang, Wang, Wang, Large language models as optimization controllers: Adaptive continuation for SIMP topology optimization, Advances in Engineering Software 223, 104304, 2026, doi:10.1016/j.advengsoft.2026.104304.

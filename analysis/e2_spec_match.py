@@ -6,11 +6,11 @@ import json
 import sys
 from pathlib import Path
 
-IMPL = Path(r"E:\AI\AUTO\AutoSiMP_full_implementation")
+IMPL = Path(__file__).resolve().parents[1]
 DIAG = IMPL / "reproducibility" / "diagnostic_suite"
 PIPE = IMPL / "reproducibility" / "benchmark_results" / "pipeline_results.json"
-FROZEN = Path(r"E:\AI\AUTO\revision_2026-09-20_aes\frozen_specs")
-OUT = Path(r"E:\AI\AUTO\revision_2026-09-20_aes\evidence")
+FROZEN = IMPL / "frozen_specs"
+OUT = IMPL / "results"
 
 sys.path.insert(0, str(IMPL))
 sys.path.insert(0, str(DIAG))

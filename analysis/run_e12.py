@@ -15,15 +15,12 @@ from pathlib import Path
 
 import numpy as np
 
-PINNED = r"C:\Users\YSL0\AppData\Local\Programs\Python\Python312\python.exe"
-IMPL = Path(r"E:\AI\AUTO\AutoSiMP_full_implementation")
+IMPL = Path(__file__).resolve().parents[1]
 DIAG = IMPL / "reproducibility" / "diagnostic_suite"
-ROOT = Path(r"E:\AI\AUTO\revision_2026-09-20_aes")
-OUT = ROOT / "evidence"
-FIG = ROOT / "figures"
+OUT = IMPL / "results"
+FIG = OUT
 MODEL = "gemini-3.1-flash-lite"
 N_REPEATS = 3
-KEYFILE = Path(r"E:\AI\AUTO\correct api.txt")
 
 sys.path.insert(0, str(IMPL))
 sys.path.insert(0, str(DIAG))
@@ -53,23 +50,7 @@ MATCH_KEYS_3D = MATCH_KEYS_2D + ("Lz_match",)
 
 
 def load_key() -> str:
-    env = (os.environ.get("GEMINI_API_KEY") or "").strip()
-    if env:
-        return env
-    if not KEYFILE.is_file():
-        return ""
-    text = KEYFILE.read_text(encoding="utf-8")
-    for line in text.splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        if "=" in line:
-            _, _, val = line.partition("=")
-            val = val.strip().strip('"').strip("'")
-            if val:
-                return val
-        return line
-    return ""
+    return (os.environ.get("GEMINI_API_KEY") or "").strip()
 
 
 def compare_specs_3d(gt: ProblemSpec, test: ProblemSpec) -> dict:

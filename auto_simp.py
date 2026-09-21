@@ -517,7 +517,7 @@ PRESETS = {
 
 def main():
     parser = argparse.ArgumentParser(
-        description="AutoSiMP: human-verifiable SIMP topology optimization configuration")
+        description="AutoSiMP: inspectable SIMP topology optimization configuration")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("prompt", nargs="?", default=None,
                        help="Natural-language problem description")

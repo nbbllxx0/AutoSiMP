@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the AutoSiMP manuscript and this repository."
-title: "AutoSiMP: Human-Verifiable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization"
+title: "AutoSiMP: Inspectable Natural-Language Problem Specification and Solver Orchestration for SIMP Topology Optimization"
 authors:
   - family-names: Yang
     given-names: Shaoliang
@@ -13,4 +13,4 @@ license: "BSD-3-Clause"
 type: software
 version: "0.1.0"
 date-released: "2026-06-12"
-abstract: "AutoSiMP provides a human-verifiable workflow for translating natural-language problem descriptions into editable SIMP topology-optimization ProblemSpec objects, solver-ready boundary conditions, solver runs, and numerical/topological diagnostic reports."
+abstract: "AutoSiMP provides an inspectable workflow for translating natural-language problem descriptions into editable SIMP topology-optimization ProblemSpec objects, solver-ready boundary conditions, solver runs, and numerical/topological diagnostic reports."
