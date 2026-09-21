@@ -878,7 +878,7 @@ def run_configurator_tests(
 # This is THE headline experiment for the AutoSIMP paper.
 # For each problem, we compare:
 #   (A) Ground-truth spec -> solve    (oracle: author-specified)
-#   (B) NL prompt -> LLM configure -> solve   (human-verifiable draft spec)
+#   (B) NL prompt -> LLM configure -> solve   (inspectable draft spec)
 #
 # The comparison measures the "configuration penalty": how much compliance
 # do you lose by letting the LLM configure the problem vs doing it yourself?
@@ -1071,7 +1071,7 @@ def run_pipeline_experiment(
 
     For each test case, runs:
       (A) Ground-truth spec -> solve  (oracle baseline)
-      (B) Prompt -> LLM configure -> solve  (human-verifiable draft spec)
+      (B) Prompt -> LLM configure -> solve  (inspectable draft spec)
 
     Compares compliance, quality metrics, and configuration accuracy.
     """
