@@ -62,6 +62,14 @@ def configure_prompt():
             temperature=float(data.get("temperature", 0.0)),
             verbose=bool(data.get("verbose", False)),
         )
+        if result.spec is None:
+            return jsonify({
+                "success": False,
+                "error": f"No specification drafted ({result.error}). "
+                         "Enter the specification manually.",
+                "warnings": result.warnings,
+                "llm_used": False,
+            }), 503
         return jsonify({
             "success": True,
             "spec": result.spec.to_dict(),

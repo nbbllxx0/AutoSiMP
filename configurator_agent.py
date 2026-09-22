@@ -8,7 +8,8 @@ Same DNC pattern as pub_llm_agent.py:
   - Structured JSON output (responseMimeType = application/json)
   - Gemini Flash Lite via raw REST
   - Deterministic safety rails: clamp, validate, reject impossible physics
-  - Graceful fallback to a default cantilever when API is unavailable
+  - Fails closed: returns no specification when the API is unavailable or the
+    call fails, so no substitute problem can be solved by mistake
 """
 
 from __future__ import annotations
@@ -167,16 +168,14 @@ def _sanitize_spec_dict(d: dict) -> tuple[dict, list[str]]:
     # Volume fraction
     d["volfrac"] = float(_clamp(d.get("volfrac", 0.5), 0.01, 0.99))
 
-    # Supports: ensure at least one
-    if not d.get("supports"):
-        d["supports"] = [{"type": "edge", "edge": "left", "constraint": "fixed"}]
-        warnings.append("No supports specified — defaulted to left edge fixed.")
-
-    # Loads: ensure at least one
-    if not d.get("loads"):
-        d["loads"] = [{"type": "point", "x": d["Lx"], "y": d["Ly"] / 2,
-                       "z": 0.0, "fx": 0.0, "fy": -1.0, "fz": 0.0}]
-        warnings.append("No loads specified — defaulted to mid-right downward point load.")
+    # Supports and loads are never invented: a draft without them is
+    # returned as-is and ProblemSpec.validate() blocks the solve.
+    d["supports"] = list(d.get("supports") or [])
+    d["loads"] = list(d.get("loads") or [])
+    if not d["supports"]:
+        warnings.append("No supports specified: add supports before solving.")
+    if not d["loads"]:
+        warnings.append("No loads specified: add loads before solving.")
 
     # Clamp load coordinates to domain
     for ld in d.get("loads", []):
@@ -215,22 +214,6 @@ def _sanitize_spec_dict(d: dict) -> tuple[dict, list[str]]:
         d["rmin"] = float(_clamp(d["rmin"], 1.1, 4.0))
 
     return d, warnings
-
-
-# ---------------------------------------------------------------------------
-# Default fallback problem (no API needed)
-# ---------------------------------------------------------------------------
-
-DEFAULT_CANTILEVER = {
-    "Lx": 2.0, "Ly": 1.0, "Lz": 0.0,
-    "nelx": 60, "nely": 30, "nelz": 0,
-    "E": 1.0, "nu": 0.3, "volfrac": 0.5,
-    "supports": [{"type": "edge", "edge": "left", "constraint": "fixed"}],
-    "loads": [{"type": "point", "x": 2.0, "y": 0.5, "z": 0.0,
-               "fx": 0.0, "fy": -1.0, "fz": 0.0}],
-    "passive_regions": [],
-    "max_iter": None, "rmin": None,
-}
 
 
 # ---------------------------------------------------------------------------
@@ -275,34 +258,33 @@ def configure(
     Returns
     -------
     ConfiguratorResult with:
-        .spec       : ProblemSpec (validated, ready for bc_generator)
-        .raw_dict   : dict the LLM returned (after sanitization)
+        .spec       : ProblemSpec (validated, ready for bc_generator), or
+                      None when no specification could be drafted
+        .raw_dict   : dict the LLM returned (after sanitization), or None
         .warnings   : list[str] from sanitization
-        .llm_used   : bool — True if LLM was called, False if fallback
+        .llm_used   : bool — True if the LLM returned a specification
         .error      : str or None
     """
     key = (api_key or os.environ.get("GEMINI_API_KEY") or "").strip()
 
     if not key:
         if verbose:
-            print("[Configurator] No API key — using default cantilever.")
-        spec = ProblemSpec.from_dict(DEFAULT_CANTILEVER)
+            print("[Configurator] No API key — no specification drafted.")
         return ConfiguratorResult(
-            spec=spec, raw_dict=DEFAULT_CANTILEVER,
-            warnings=["No API key — fell back to default cantilever."],
-            llm_used=False, error=None)
+            spec=None, raw_dict=None,
+            warnings=["No API key: enter the specification manually."],
+            llm_used=False, error="No API key")
 
     # Call LLM
     parsed, err = _call_gemini(prompt, model, key, temperature)
 
     if err or parsed is None:
         if verbose:
-            print(f"[Configurator] LLM error: {err} — using default cantilever.")
-        spec = ProblemSpec.from_dict(DEFAULT_CANTILEVER)
+            print(f"[Configurator] LLM error: {err} — no specification drafted.")
         return ConfiguratorResult(
-            spec=spec, raw_dict=DEFAULT_CANTILEVER,
-            warnings=["LLM call failed — fell back to default cantilever."],
-            llm_used=False, error=err)
+            spec=None, raw_dict=None,
+            warnings=["LLM call failed: enter the specification manually."],
+            llm_used=False, error=err or "LLM returned no specification")
 
     # Sanitize
     cleaned, warnings = _sanitize_spec_dict(parsed)

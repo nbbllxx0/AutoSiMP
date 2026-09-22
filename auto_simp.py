@@ -366,10 +366,20 @@ def auto_simp(
             print(f"[AutoSIMP] Parsing: {prompt[:80]}...")
         config_result = configure(prompt, verbose=verbose)
         spec = config_result.spec
+        if spec is None:
+            raise RuntimeError(
+                "Configurator returned no specification "
+                f"({config_result.error}); supply or edit a spec before solving.")
         if verbose:
             print(f"[AutoSIMP] Configurator: "
                   f"{'LLM' if config_result.llm_used else 'fallback'}  "
                   f"warnings={len(config_result.warnings)}")
+
+    # Block the solve on any validation error (missing supports or loads,
+    # out-of-range values, a point load on a fully fixed point support).
+    errors = spec.validate()
+    if errors:
+        raise ValueError("Specification failed validation: " + "; ".join(errors))
 
     # ── Step 2: Generate BCs ─────────────────────────────────────────────
     if verbose:
