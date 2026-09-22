@@ -187,6 +187,7 @@ def validate_manifest() -> int:
         path.relative_to(ROOT).as_posix()
         for path in ROOT.rglob("*")
         if path.is_file() and path.name != manifest.name
+        and "__pycache__" not in path.parts
     }
     listed_files = {row["path"] for row in rows}
     if listed_files != expected_files:
