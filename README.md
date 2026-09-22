@@ -130,8 +130,10 @@ Current manuscript evidence includes:
 
 - 10 canonical configuration prompts, 10 challenge prompts, a 100-prompt held-out
   suite, and an eight-prompt rectangular 3-D configuration track.
-- Frozen-spec match: 8 of 10 nine-field exact; four of those eight differ in
-  archived mesh; Bridge and L-bracket are semantic failures.
+- Stored configured-spec match: 7 of 10 nine-field exact (86/90 fields); four
+  configured specs use a different mesh; Bridge, dual-load, and L-bracket are
+  semantic failures that still pass the five numerical gates
+  (`frozen_specs/configured_specs.json`, `results/e2_spec_match.json`).
 - Matched LLM vs rule-only scores: 85/90 vs 89/90 (canonical), 71/90 vs 67/90
   (challenge), 670/900 vs 652/900 (held-out).
 - Preview-surfacing (E11): 32 detections against 71 named silent misses on 120

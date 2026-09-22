@@ -1,9 +1,9 @@
 {
   "meta": {
-    "frozen_at_utc": "2026-09-20T21:53:40Z",
+    "configurator_model": "gemini-3.1-flash-lite-preview (configure() default at run time), temperature 0",
+    "frozen_at_utc": "2026-09-22T23:05:27Z",
     "n_cases": 10,
-    "n_unrecoverable": 2,
-    "rule": "Do not guess. UNRECOVERABLE is a reportable finding.",
+    "rule": "Configured specs are copied verbatim from the stored retry-run reports.",
     "task": "E0"
   },
   "specs": {

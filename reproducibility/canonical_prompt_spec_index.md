@@ -6,6 +6,14 @@ This file makes the configuration-accuracy reference reproducible for the
 author-defined canonical `ProblemSpec`, the reported LLM-configured outcome, field-level
 comparison status, and whether alternate interpretations are plausible.
 
+## Current nine-field scores
+The outcome columns below predate scoring of the stored configured
+specifications. The current nine-field scores are in
+`results/e2_spec_match.json`, computed from `frozen_specs/configured_specs.json`
+(the specs stored by the archived retry run): 7 of 10 exact. Bridge misses
+support count and location; dual-load and L-bracket miss load location. MBB,
+simply-supported, dual-load, and high-aspect use a different mesh.
+
 ## Reference-Specification Authorship
 - Source: author-defined canonical `ProblemSpec` objects in
   `diagnostic_suite/revision_experiments.py`, `PIPELINE_TEST_CASES`.

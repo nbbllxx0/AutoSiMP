@@ -1,40 +1,44 @@
 {
   "n_cases": 10,
-  "n_exact_9of9": 8,
+  "n_exact_9of9": 7,
+  "n_match_total": 86,
+  "n_fields_total": 90,
   "n_nine_and_mesh": 4,
-  "n_nine_mesh_diff": 4,
-  "n_semantic_failure": 2,
-  "n_unrecoverable": 2,
-  "primary_headline": "8/10 exact nine-field matches",
-  "mesh_disclosure": "8/10 match on all nine scored fields; 4 of those also differ in archived mesh (pipeline nelx x nely), which the nine fields do not score. 4/10 match on nine fields and mesh.",
-  "lbracket_semantic_failure": true,
-  "high_aspect_not_claimed_better": true,
+  "n_nine_mesh_diff": 3,
+  "n_mesh_diff": 4,
+  "n_semantic_failure": 3,
+  "primary_headline": "7/10 exact nine-field matches",
   "rows": [
     {
       "name": "bridge",
-      "configured_status": "UNRECOVERABLE",
-      "scored": false,
-      "n_match": null,
+      "configured_status": "stored_configured",
+      "n_match": 7,
       "n_fields": 9,
       "exact_9of9": false,
       "semantic_failure": true,
-      "reason": [
-        "supports: identities of the two generated support entries (pipeline_results.json config_n_supports_llm=2 vs canonical 1; Table 5 footnote L1872-1877)",
-        "load-field composition: canonical_prompt_spec_index.md says the reported mismatch is load-field handling; Table 5 footnote says support count. config_n_loads_match=true so load *count* matches; the actual load object is not stored."
-      ],
       "fields": {
+        "Lx_match": true,
+        "Ly_match": true,
+        "volfrac_match": true,
+        "n_supports_match": false,
+        "n_loads_match": true,
+        "n_passive_match": true,
+        "support_semantics_match": false,
+        "load_semantics_match": true,
+        "passive_semantics_match": true,
         "mesh_equal": true
       },
-      "n_supports_match": false,
-      "note": "Support identities UNRECOVERABLE (count 2 vs 1). Not a specification match.",
       "mesh_gt": "120x30",
       "mesh_llm": "120x30",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": [
+        "n_supports_match",
+        "support_semantics_match"
+      ]
     },
     {
       "name": "cantilever_basic",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -53,12 +57,12 @@
       },
       "mesh_gt": "60x30",
       "mesh_llm": "60x30",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": []
     },
     {
       "name": "cantilever_low_vf",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -77,12 +81,12 @@
       },
       "mesh_gt": "60x30",
       "mesh_llm": "60x30",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": []
     },
     {
       "name": "cantilever_with_hole",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -101,12 +105,12 @@
       },
       "mesh_gt": "80x40",
       "mesh_llm": "80x40",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": []
     },
     {
       "name": "deep_beam_shear",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -125,16 +129,16 @@
       },
       "mesh_gt": "30x60",
       "mesh_llm": "30x60",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": []
     },
     {
       "name": "dual_load",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
-      "n_match": 9,
+      "configured_status": "stored_configured",
+      "n_match": 8,
       "n_fields": 9,
-      "exact_9of9": true,
-      "semantic_failure": false,
+      "exact_9of9": false,
+      "semantic_failure": true,
       "fields": {
         "Lx_match": true,
         "Ly_match": true,
@@ -143,18 +147,20 @@
         "n_loads_match": true,
         "n_passive_match": true,
         "support_semantics_match": true,
-        "load_semantics_match": true,
+        "load_semantics_match": false,
         "passive_semantics_match": true,
         "mesh_equal": false
       },
       "mesh_gt": "80x40",
       "mesh_llm": "60x30",
-      "mesh_equal": false
+      "mesh_equal": false,
+      "missed_fields": [
+        "load_semantics_match"
+      ]
     },
     {
       "name": "high_aspect",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -173,32 +179,38 @@
       },
       "mesh_gt": "120x20",
       "mesh_llm": "180x30",
-      "mesh_equal": false
+      "mesh_equal": false,
+      "missed_fields": []
     },
     {
       "name": "lbracket",
-      "configured_status": "UNRECOVERABLE",
-      "scored": false,
-      "n_match": null,
+      "configured_status": "stored_configured",
+      "n_match": 8,
       "n_fields": 9,
       "exact_9of9": false,
       "semantic_failure": true,
-      "reason": [
-        "loads[0].y: Table 5 footnote L1878-1882 and the spec index state the horizontal load sits at a different y than the canonical reference (x=2.0, y=0.5, fx=1.0). The generated y is not stored in pipeline_results.json (n_loads_match=true; load_semantics is not stored). UNRECOVERABLE."
-      ],
       "fields": {
+        "Lx_match": true,
+        "Ly_match": true,
+        "volfrac_match": true,
+        "n_supports_match": true,
+        "n_loads_match": true,
+        "n_passive_match": true,
+        "support_semantics_match": true,
+        "load_semantics_match": false,
+        "passive_semantics_match": true,
         "mesh_equal": true
       },
-      "load_semantics_match": false,
-      "note": "Generated load y is UNRECOVERABLE. Scored as a load-location failure, not as a pass.",
       "mesh_gt": "60x60",
       "mesh_llm": "60x60",
-      "mesh_equal": true
+      "mesh_equal": true,
+      "missed_fields": [
+        "load_semantics_match"
+      ]
     },
     {
       "name": "mbb_beam",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -217,12 +229,12 @@
       },
       "mesh_gt": "90x30",
       "mesh_llm": "180x60",
-      "mesh_equal": false
+      "mesh_equal": false,
+      "missed_fields": []
     },
     {
       "name": "simply_supported_center",
-      "configured_status": "recovered_as_reference",
-      "scored": true,
+      "configured_status": "stored_configured",
       "n_match": 9,
       "n_fields": 9,
       "exact_9of9": true,
@@ -241,7 +253,8 @@
       },
       "mesh_gt": "90x30",
       "mesh_llm": "180x60",
-      "mesh_equal": false
+      "mesh_equal": false,
+      "missed_fields": []
     }
   ]
 }
