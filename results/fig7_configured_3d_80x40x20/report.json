@@ -89,5 +89,5 @@
     "rerun_hint": null,
     "llm_assessment": null
   },
-  "density_npy": "E:\\AI\\AUTO\\revision_2026-09-20_aes\\evidence\\fig7_fine_80x40x20\\rho_run1.npy"
+  "density_npy": "results/fig7_configured_3d_80x40x20/rho_run1.npy"
 }
