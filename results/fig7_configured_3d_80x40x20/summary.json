@@ -1,0 +1,45 @@
+{
+  "spec": {
+    "Lx": 2.0,
+    "Ly": 1.0,
+    "Lz": 0.5,
+    "nelx": 80,
+    "nely": 40,
+    "nelz": 20,
+    "E": 1.0,
+    "nu": 0.3,
+    "volfrac": 0.4,
+    "max_iter": null,
+    "rmin": null,
+    "supports": [
+      {
+        "type": "edge",
+        "edge": "left",
+        "constraint": "fixed"
+      }
+    ],
+    "loads": [
+      {
+        "type": "point",
+        "x": 2.0,
+        "y": 0.5,
+        "z": 0.25,
+        "fx": 0.0,
+        "fy": -1.0,
+        "fz": 0.0
+      }
+    ],
+    "passive_regions": []
+  },
+  "mesh": "80x40x20",
+  "n_elem": 64000,
+  "controller": "schedule",
+  "max_iter": 80,
+  "final_compliance": 2.3896780848666364,
+  "final_grayness": 3.4721056197648045e-05,
+  "n_iter": 120,
+  "evaluation_passed": true,
+  "failed_checks": [],
+  "wall_time_s": 5175.4,
+  "density_npy": "results/fig7_configured_3d_80x40x20/rho_run1.npy"
+}

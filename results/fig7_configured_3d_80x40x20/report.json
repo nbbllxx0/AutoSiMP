@@ -1,0 +1,93 @@
+{
+  "autosimp_version": "0.1.0",
+  "run_index": 1,
+  "elapsed_seconds": 5175.42,
+  "problem_spec": {
+    "Lx": 2.0,
+    "Ly": 1.0,
+    "Lz": 0.5,
+    "nelx": 80,
+    "nely": 40,
+    "nelz": 20,
+    "E": 1.0,
+    "nu": 0.3,
+    "volfrac": 0.4,
+    "max_iter": null,
+    "rmin": null,
+    "supports": [
+      {
+        "type": "edge",
+        "edge": "left",
+        "constraint": "fixed"
+      }
+    ],
+    "loads": [
+      {
+        "type": "point",
+        "x": 2.0,
+        "y": 0.5,
+        "z": 0.25,
+        "fx": 0.0,
+        "fy": -1.0,
+        "fz": 0.0
+      }
+    ],
+    "passive_regions": []
+  },
+  "solver_summary": {
+    "nelx": 80,
+    "nely": 40,
+    "nelz": 20,
+    "n_iter": 120,
+    "final_compliance": 2.3896780848666364,
+    "best_compliance": 2.166784461811536,
+    "best_iteration": 49,
+    "final_grayness": 3.4721056197648045e-05,
+    "best_grayness": 0.00031331853095292034,
+    "best_is_valid": true
+  },
+  "evaluation": {
+    "passed": true,
+    "summary": "5 checks: 5 passed, 0 failed.",
+    "checks": [
+      {
+        "name": "connectivity",
+        "passed": true,
+        "value": 1.0,
+        "threshold": 0.99,
+        "message": "3D: 1/1 load regions connected to supports."
+      },
+      {
+        "name": "compliance",
+        "passed": true,
+        "value": 1.1028683872270113,
+        "threshold": 2.0,
+        "message": "Final/best ratio = 1.103 (OK)"
+      },
+      {
+        "name": "grayness",
+        "passed": true,
+        "value": 3.4721056197648045e-05,
+        "threshold": 0.15,
+        "message": "Grayness = 0.0000 (crisp)"
+      },
+      {
+        "name": "volume_fraction",
+        "passed": true,
+        "value": 0.399946182430947,
+        "threshold": 0.4,
+        "message": "Actual vf=0.3999 vs target=0.4000 (diff=0.0001)"
+      },
+      {
+        "name": "convergence",
+        "passed": true,
+        "value": 120.0,
+        "threshold": 120.0,
+        "message": "Compliance stable (rel_range=0.00000) over final 24 iters."
+      }
+    ],
+    "rerun_hint": null,
+    "llm_assessment": null
+  },
+  "density_npy": "E:\\AI\\AUTO\\revision_2026-09-20_aes\\evidence\\fig7_fine_80x40x20\\rho_run1.npy"
+}
